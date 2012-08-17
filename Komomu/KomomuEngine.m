@@ -31,7 +31,7 @@
         DLog(@"%@", operation);
     } onError:^(NSError *error) {
         
-        DLog(@"%@", error);
+        DLog(@"%aaa@", error);
     }];
     
     [self enqueueOperation:op];
