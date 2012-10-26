@@ -184,18 +184,16 @@
     KomomuSearchCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
     
-//    KomomuComunityViewController *comunityController = [[KomomuComunityViewController alloc] initWithNibName:@"KomomuComunityViewController" bundle:[NSBundle mainBundle]];
-//    comunityController.title = cell.nameLabel.text;
-//    
-//    comunityController.communityID = cell.communityID;
-//    
-//    [self.navigationController pushViewController:comunityController animated:YES];
-    self.search.text = @"";
+    KomomuComunityViewController *comunityController = [[KomomuComunityViewController alloc] initWithNibName:@"KomomuComunityViewController" bundle:[NSBundle mainBundle]];
+    comunityController.title = cell.nameLabel.text;
     
+    [comunityController.params setObject:cell.communityID forKey:@"communityID"];
+    [comunityController.params setObject:@"hot" forKey:@"type"];
+    	
     
-    KomomuTabBarViewController* detailViewController = [[KomomuTabBarViewController alloc] initWithNibName:nil bundle:nil community:cell.communityID];
-    detailViewController.title = cell.nameLabel.text;
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:comunityController animated:YES];
+    self.search.text = @"";	
+
 }
 
 

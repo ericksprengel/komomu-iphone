@@ -7,10 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "KomomuViewController.h"
 
 @interface KomomuTabBarViewController : BaseViewController
 
-@property (nonatomic, retain) NSString *communityID;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil community: (NSString *)communityID;
+@property (nonatomic, retain) KomomuViewController *firstTab;
+@property (nonatomic, retain) NSString *userID;
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil tab: (KomomuViewController *)firstTab userID:(NSString *)userID;
+
+- (void)hideTabBar:(BOOL)hidden;
 @end

@@ -16,7 +16,9 @@
 
 @end
 
-@implementation KomomuViewController
+@implementation KomomuViewController {
+    KomomuAppDelegate *delegate;
+}
 @synthesize buttonSearch;
 @synthesize textSearchField;
 
@@ -41,7 +43,7 @@
 - (void)apiGraphUserPermissions {
     KomomuAppDelegate *delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[delegate facebook] requestWithGraphPath:@"me/permissions" andDelegate:self];
-
+    
 }
 
 #pragma - Private Helper Methods
@@ -52,12 +54,14 @@
 
 - (void)showLoggedIn {
 	[self.navigationController setNavigationBarHidden:NO animated:NO];
+    [delegate.tabBarController hideTabBar:NO];
+
     
-     self.backgroundImageView.hidden = YES;
-     loginButton.hidden = YES;
+    self.backgroundImageView.hidden = YES;
+    loginButton.hidden = YES;
     self.buttonSearch.hidden = NO;
     self.textSearchField.hidden = NO;
-     
+    
     [self apiFQLIMe];
 }
 
@@ -67,18 +71,18 @@
 
 - (void)showLoggedOut {
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
+  [delegate.tabBarController hideTabBar:YES];
     
     self.buttonSearch.hidden = YES;
     self.textSearchField.hidden = YES;
-     self.backgroundImageView.hidden = NO;
-     loginButton.hidden = NO;
-     
-     // Clear personal info
-   //  nameLabel.text = @"";
-     // Get the profile image
+    self.backgroundImageView.hidden = NO;
+    loginButton.hidden = NO;
+    
+    // Clear personal info
+    //  nameLabel.text = @"";
+    // Get the profile image
     // [profilePhotoImageView setImage:nil];
-     
+    
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
@@ -120,7 +124,7 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
-     
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     
     UIImage *buttonImageNormal = [UIImage imageNamed:@"blackbutton.png"];
@@ -160,14 +164,23 @@
                  forState:UIControlStateHighlighted];
     [loginButton sizeToFit];
     [self.view addSubview:loginButton];
+    
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];  
+    // Add navigation bar Title
+    self.tabBarController.navigationItem.title = @"Komomu";
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [delegate.tabBarController hideTabBar:YES];
     [super viewWillAppear:animated];
     
-    KomomuAppDelegate *delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (![[delegate facebook] isSessionValid]) {
         [self showLoggedOut];
     } else {
@@ -177,6 +190,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [delegate.tabBarController hideTabBar:NO];
+
     [super viewWillDisappear:animated];
 }
 
@@ -203,7 +218,7 @@
     textSearchField.text = @"";
     [textSearchField resignFirstResponder];
     [self.navigationController pushViewController:vc animated:YES];
-     
+    
 }
 
 
@@ -239,7 +254,7 @@
  * Called when the request logout has succeeded.
  */
 - (void)fbDidLogout {
-
+    
     
     // Remove saved authorization information if it exists and it is
     // ok to clear it (logout, session invalid, app unauthorized)
@@ -297,7 +312,7 @@
     // This callback can be a result of getting the user's basic
     // information or getting the user's permissions.
     KomomuAppDelegate *delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    
     NSString *userName = [result objectForKey:@"name"];
     if (userName) {
         // If basic information callback, set the UI objects to
@@ -333,7 +348,7 @@
         UIGraphicsEndImageContext();
         
         [[delegate komomuUser] setProfilePhotoImage:imgThumb];
-         [[delegate komomuUser] setName:userName];
+        [[delegate komomuUser] setName:userName];
         [[delegate komomuUser] setUserID:[result objectForKey:@"uid"]];
         
         [self apiGraphUserPermissions];
@@ -351,7 +366,7 @@
     NSLog(@"Err message: %@", [[error userInfo] objectForKey:@"error_msg"]);
     NSLog(@"Err code: %d", [error code]);
     
-
+    
 }
 
 

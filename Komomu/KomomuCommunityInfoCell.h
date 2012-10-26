@@ -13,6 +13,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+- (IBAction)onFollow:(id)sender;
 
 @property (nonatomic, strong) MKNetworkOperation* imageLoadingOperation;
 -(void) setTableData:(NSDictionary*) data;

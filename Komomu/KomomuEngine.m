@@ -20,7 +20,7 @@
 //                                                      @"12345678", @"password", nil]
 //                                          httpMethod:@"POST"];    
     
-    MKNetworkOperation *op = [self operationWithPath:@"~guilleuchima/komomu/communities.json" 
+    MKNetworkOperation *op = [self operationWithPath:@"prototipo/komomu/communities.json" 
                                               params:nil
                                           httpMethod:@"GET"];    
     
@@ -43,7 +43,7 @@
 
 -(void) searchCommunities:(NSString*) tag onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock {
  //   MKNetworkOperation *op = [self operationWithPath:FLICKR_IMAGE_URL([tag urlEncodedString])];
-    MKNetworkOperation *op = [self operationWithPath:@"~guilleuchima/komomu/communities.json"];
+    MKNetworkOperation *op = [self operationWithPath:@"prototipo/komomu/communities.json"];
 //       MKNetworkOperation *op = [self operationWithPath:@"komomu_API/api/listCommunities"];
 
     [op onCompletion:^(MKNetworkOperation *completedOperation) {
@@ -68,15 +68,10 @@
 
 
 -(void) getCommunity:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock {
-/*
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    if(communityID!=nil) {
-        [params setObject:communityID forKey:@"communityID"];
-    }
- */
-    MKNetworkOperation *op = [self operationWithPath:@"~guilleuchima/komomu/a.json" params:params httpMethod:@"GET"];
+
+    MKNetworkOperation *op = [self operationWithPath:@"prototipo/komomu/a.json" params:params httpMethod:@"GET"];
     
- //   MKNetworkOperation *op = [self operationWithPath:@"~guilleuchima/komomu/a.json" params:params httpMethod:@"GET"];
+
     [op onCompletion:^(MKNetworkOperation *completedOperation) {
         
         NSDictionary *response = [completedOperation responseJSON];
@@ -84,6 +79,30 @@
             NSDictionary *dict = [response objectForKey:@"community"];
             NSLog(@"%@", response);
     
+            imageURLBlock(dict);
+        }
+        
+    } onError:^(NSError *error) {
+        
+        errorBlock(error);
+    }];
+    
+    [self enqueueOperation:op];
+}
+
+-(void) getFeed:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock {
+
+    //TODO
+    MKNetworkOperation *op = [self operationWithPath:@"prototipo/komomu/a.json" params:params httpMethod:@"GET"];
+    
+    
+    [op onCompletion:^(MKNetworkOperation *completedOperation) {
+        
+        NSDictionary *response = [completedOperation responseJSON];
+        if(response!=nil) {
+            NSDictionary *dict = [response objectForKey:@"community"];
+            NSLog(@"%@", response);
+            
             imageURLBlock(dict);
         }
         

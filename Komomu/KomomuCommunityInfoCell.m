@@ -8,11 +8,14 @@
 
 #import "KomomuCommunityInfoCell.h"
 #import "KomomuAppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation KomomuCommunityInfoCell
 
 @synthesize nameLabel = _nameLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
+@synthesize followButton = _followButton;
+@synthesize descriptionLabel = _descriptionLabel;
 
 @synthesize imageLoadingOperation = imageLoadingOperation_;
 
@@ -28,7 +31,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
+   // [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
 }
@@ -38,7 +41,7 @@
     
     NSString *loadingImageURLString = [data objectForKey:@"image"];
     self.nameLabel.text = [data objectForKey:@"name"];
-    
+    self.descriptionLabel.text = [data objectForKey:@"description"];
     
     self.imageLoadingOperation = [ApplicationDelegate.komomuEngine imageAtURL:[NSURL URLWithString:loadingImageURLString] 
                                                                  onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
@@ -46,6 +49,11 @@
                                                                      if([loadingImageURLString isEqualToString:[url absoluteString]]) {
                                                                          
                                                                          if (isInCache) {
+                                                                             [self.thumbnailImageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
+                                                                             [self.thumbnailImageView.layer setShadowOffset: CGSizeMake(-3.0, 3.0)];
+                                                                             [self.thumbnailImageView.layer setShadowRadius:3.0];
+                                                                             [self.thumbnailImageView.layer setShadowOpacity:1.0];
+                                                                             [self.thumbnailImageView.layer setBorderWidth:2.0];
                                                                              self.thumbnailImageView.image = fetchedImage;
                                                                          } else {
                                                                              UIImageView *loadedImageView = [[UIImageView alloc] initWithImage:fetchedImage];
@@ -63,12 +71,33 @@
                                                                               {
                                                                                   self.thumbnailImageView.image = fetchedImage;
                                                                                   self.thumbnailImageView.alpha = 1;
+                                                                    [self.thumbnailImageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
+                                                                    [self.thumbnailImageView.layer setBorderWidth:2.0];
+                    
+                                                                
+                                                                [self.thumbnailImageView.layer setShadowOffset: CGSizeMake(-3.0, 3.0)];
+                                                                 [self.thumbnailImageView.layer setShadowRadius:3.0];
+                                                                   [self.thumbnailImageView.layer setShadowOpacity:1.0];
                                                                                   [loadedImageView removeFromSuperview];
                                                                               }];
                                                                          }
-                                                                     }
+                                                                     } 
+                                                                    
+                                                                     
                                                                  }];
+
+
 }
 
+
+- (IBAction)onFollow:(id)sender {
+    if ([sender isSelected]) {
+        [sender setSelected:NO];
+        [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
+    }else {
+        [sender setSelected:YES];
+        [sender setTitle:@"Follow" forState:UIControlStateNormal];
+    }
+}
 
 @end

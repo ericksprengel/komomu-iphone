@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KomomuPostCell : UITableViewCell
+@interface KomomuPostCell : UITableViewCell {
+    BOOL supressDeleteButton;
+}
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;

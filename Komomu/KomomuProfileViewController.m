@@ -60,6 +60,13 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];  
+    // Add navigation bar Title
+    self.tabBarController.navigationItem.title = @"Profile";
+
+}
+
 #pragma mark -
 #pragma mark Table View Data Source Methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

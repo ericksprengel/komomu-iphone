@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "KomomuEngine.h"
 #import "KomomuViewController.h"
-
 #import "KomomuUser.h"
-
 #import "FBConnect.h"
+#import "KomomuTabBarViewController.h"
+
 
 #define ApplicationDelegate ((KomomuAppDelegate *)[UIApplication sharedApplication].delegate)
 
@@ -26,6 +26,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) KomomuTabBarViewController *tabBarController;
+
 
 @property(nonatomic, retain) KomomuUser *komomuUser;
 @property (nonatomic, retain) Facebook *facebook;

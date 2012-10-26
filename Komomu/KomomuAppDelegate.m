@@ -7,8 +7,7 @@
 //
 
 #import "KomomuAppDelegate.h"
-
-#import "KomomuViewController.h"
+#import "KomomuTabBarViewController.h"
 
 #define FACEBOOK_APP_ID @"268356133266355"
 
@@ -16,6 +15,8 @@
 
 @synthesize window = _window;
 @synthesize navController = _navController;
+@synthesize tabBarController = _tabBarController;
+
 @synthesize komomuEngine = _komomuEngine;
 @synthesize facebook;
 @synthesize userPermissions;
@@ -23,33 +24,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     /*
      * headerFields?
      */
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary]; 
     [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
     
-   // self.komomuEngine = [[KomomuEngine alloc] initWithHostName:@"api.flickr.com"customHeaderFields:nil];
-//    self.komomuEngine = [[KomomuEngine alloc] initWithHostName:@"192.168.0.180"customHeaderFields:nil];
-    self.komomuEngine = [[KomomuEngine alloc] initWithHostName:@"192.168.0.65"customHeaderFields:nil];
-    [self.komomuEngine useCache];
+    // Init komomuEngine
+    //  self.komomuEngine = [[KomomuEngine alloc] initWithHostName:@"192.168.0.180"customHeaderFields:nil];
+    _komomuEngine = [[KomomuEngine alloc] initWithHostName:@"komomu.com"customHeaderFields:headerFields];
+    [_komomuEngine useCache];
     
-    // Override point for customization after application launch.
- 
-    UIViewController *controller = [[KomomuViewController alloc] initWithNibName:@"KomomuViewController" bundle:nil];
+    KomomuViewController *controller = [[KomomuViewController alloc] initWithNibName:@"KomomuViewController" bundle:nil];
+    
+    KomomuTabBarViewController* tabBarViewController = [[KomomuTabBarViewController alloc] initWithNibName:nil bundle:nil tab:controller userID:@"10"];
+    _tabBarController = tabBarViewController;
 
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarViewController];
     navigationController.navigationBar.tintColor = [UIColor darkTextColor];
     navigationController.navigationBar.topItem.title = NSLocalizedString(@"Komomu",@"Komomu");
-    
-    self.navController = navigationController;
+    _navController = navigationController;
     
     /*
      * Facebook
      */
+    
     facebook = [[Facebook alloc] initWithAppId:FACEBOOK_APP_ID andDelegate:controller];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"FBAccessTokenKey"] 
@@ -57,68 +59,14 @@
         facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
-
     userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
     _komomuUser = [[KomomuUser alloc] init];
     
-   self.window.rootViewController = self.navController;   
-
-    [self.window makeKeyAndVisible];
+    _window.rootViewController = _navController;   
     
-//    
-//    // Check App ID:
-//    // This is really a warning for the developer, this should not
-//    // happen in a completed app
-//    if (!FACEBOOK_APP_ID) {
-//        UIAlertView *alertView = [[UIAlertView alloc]
-//                                  initWithTitle:@"Setup Error"
-//                                  message:@"Missing app ID. You cannot run the app until you provide this in the code."
-//                                  delegate:self
-//                                  cancelButtonTitle:@"OK"
-//                                  otherButtonTitles:nil,
-//                                  nil];
-//        [alertView show];
-//    } else {
-//        // Now check that the URL scheme fb[app_id]://authorize is in the .plist and can
-//        // be opened, doing a simple check without local app id factored in here
-//        NSString *url = [NSString stringWithFormat:@"fb%@://authorize",FACEBOOK_APP_ID];
-//        BOOL bSchemeInPlist = NO; // find out if the sceme is in the plist file.
-//        NSArray* aBundleURLTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleURLTypes"];
-//        if ([aBundleURLTypes isKindOfClass:[NSArray class]] &&
-//            ([aBundleURLTypes count] > 0)) {
-//            NSDictionary* aBundleURLTypes0 = [aBundleURLTypes objectAtIndex:0];
-//            if ([aBundleURLTypes0 isKindOfClass:[NSDictionary class]]) {
-//                NSArray* aBundleURLSchemes = [aBundleURLTypes0 objectForKey:@"CFBundleURLSchemes"];
-//                if ([aBundleURLSchemes isKindOfClass:[NSArray class]] &&
-//                    ([aBundleURLSchemes count] > 0)) {
-//                    NSString *scheme = [aBundleURLSchemes objectAtIndex:0];
-//                    if ([scheme isKindOfClass:[NSString class]] &&
-//                        [url hasPrefix:scheme]) {
-//                        bSchemeInPlist = YES;
-//                    }
-//                }
-//            }
-//        }
-//        // Check if the authorization callback will work
-//        BOOL bCanOpenUrl = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: url]];
-//        if (!bSchemeInPlist || !bCanOpenUrl) {
-//            UIAlertView *alertView = [[UIAlertView alloc]
-//                                      initWithTitle:@"Setup Error"
-//                                      message:@"Invalid or missing URL scheme. You cannot run the app until you set up a valid URL scheme in your .plist."
-//                                      delegate:self
-//                                      cancelButtonTitle:@"OK"
-//                                      otherButtonTitles:nil,
-//                                      nil];
-//            [alertView show];
-//        }
-//    }
-
+    [_window makeKeyAndVisible];
+    
     return YES;
-}
-
-//TODO DELETEME
-- (void) logoutButtonClicked:(id)sender {
-    [facebook logout];
 }
 
 // Pre iOS 4.2 support
@@ -161,19 +109,5 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end
