@@ -1,0 +1,983 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA05EABA159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAB9159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.m */; };
+		BA05EAD3159B595C00063AB0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAC1159B595C00063AB0 /* NSData+Base64.m */; };
+		BA05EAD4159B595C00063AB0 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAC3159B595C00063AB0 /* NSDate+RFC1123.m */; };
+		BA05EAD5159B595C00063AB0 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAC5159B595C00063AB0 /* NSDictionary+RequestEncoding.m */; };
+		BA05EAD6159B595C00063AB0 /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAC7159B595C00063AB0 /* NSString+MKNetworkKitAdditions.m */; };
+		BA05EAD7159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAC9159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.m */; };
+		BA05EAD8159B595C00063AB0 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EACB159B595C00063AB0 /* MKNetworkEngine.m */; };
+		BA05EAD9159B595C00063AB0 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EACE159B595C00063AB0 /* MKNetworkOperation.m */; };
+		BA05EADA159B595C00063AB0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAD1159B595C00063AB0 /* Reachability.m */; };
+		BA05EAE1159B5AF600063AB0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05EADF159B5AA100063AB0 /* CFNetwork.framework */; };
+		BA05EAE2159B5AF800063AB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05EADD159B59DE00063AB0 /* SystemConfiguration.framework */; };
+		BA05EAE3159B5AFB00063AB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05EADB159B59D400063AB0 /* Security.framework */; };
+		BA05EAE4159B5AFD00063AB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0EB851594FD5600478315 /* QuartzCore.framework */; };
+		BA05EAE7159B73A800063AB0 /* KomomuEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05EAE6159B73A800063AB0 /* KomomuEngine.m */; };
+		BA1C95F415C326310002D33A /* KomomuProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1C95F215C326310002D33A /* KomomuProfileViewController.m */; };
+		BA1C95F515C326310002D33A /* KomomuProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1C95F315C326310002D33A /* KomomuProfileViewController.xib */; };
+		BA1C95F815C3265B0002D33A /* KomomuUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1C95F715C3265B0002D33A /* KomomuUser.m */; };
+		BA2363B816BEFEF10069CF41 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363B716BEFEED0069CF41 /* comment.png */; };
+		BA2363BB16BEFF050069CF41 /* comment2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363BA16BEFF020069CF41 /* comment2.png */; };
+		BA2363BE16BF09D40069CF41 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363BC16BF09CC0069CF41 /* search.png */; };
+		BA2363BF16BF09D40069CF41 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363BD16BF09D00069CF41 /* search@2x.png */; };
+		BA2363C116BF0CF80069CF41 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C016BF0CF60069CF41 /* icon.png */; };
+		BA2363C416BF0ED60069CF41 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C216BF0ECE0069CF41 /* Default.png */; };
+		BA2363C516BF0ED60069CF41 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C316BF0ED20069CF41 /* Default@2x.png */; };
+		BA301B691634426A002B0B55 /* KomomuFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA301B6716344269002B0B55 /* KomomuFeedViewController.m */; };
+		BA301B6A1634426A002B0B55 /* KomomuFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA301B681634426A002B0B55 /* KomomuFeedViewController.xib */; };
+		BA301B6E16347B1E002B0B55 /* UIImageViewBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA301B6D16347B1D002B0B55 /* UIImageViewBorder.m */; };
+		BA30AC4315E81AB80024FDEE /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA30AC4115E81AB70024FDEE /* greenButton.png */; };
+		BA30AC4415E81AB80024FDEE /* greenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA30AC4215E81AB80024FDEE /* greenButton@2x.png */; };
+		BA30AC4815E81AC10024FDEE /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA30AC4615E81AC00024FDEE /* redButton.png */; };
+		BA30AC4915E81AC10024FDEE /* redButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA30AC4715E81AC10024FDEE /* redButton@2x.png */; };
+		BA31B18E16BF3C32006E1792 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA31B18D16BF3C32006E1792 /* MessageUI.framework */; };
+		BA31B19316BF61DE006E1792 /* KomomuCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA31B19116BF61DE006E1792 /* KomomuCommentViewController.m */; };
+		BA31B19416BF61DE006E1792 /* KomomuCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA31B19216BF61DE006E1792 /* KomomuCommentViewController.xib */; };
+		BA57CCA7166E79CF00EF1126 /* KomomuContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57CCA6166E79CF00EF1126 /* KomomuContentView.xib */; };
+		BA5A348416721EC2005F7FE5 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5A348316721EBE005F7FE5 /* like.png */; };
+		BA5A3487167223C9005F7FE5 /* dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5A3486167223C6005F7FE5 /* dislike.png */; };
+		BA600A181674D08D0076EEFA /* KomomuEngineAux.m in Sources */ = {isa = PBXBuildFile; fileRef = BA600A171674D08D0076EEFA /* KomomuEngineAux.m */; };
+		BA600A1E1675794E0076EEFA /* like2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA600A1D1675794E0076EEFA /* like2.png */; };
+		BA600A201675795B0076EEFA /* dislike2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA600A1F1675795B0076EEFA /* dislike2.png */; };
+		BA63C20C1673EEAB00BC2A3E /* MAConfirmButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA63C2091673EEAB00BC2A3E /* MAConfirmButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA63C20D1673EEAB00BC2A3E /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = BA63C20B1673EEAB00BC2A3E /* UIColor-Expanded.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA6B79C615DD8A5300EDA769 /* KomomuCommunityInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6B79C515DD8A5300EDA769 /* KomomuCommunityInfoCell.m */; };
+		BA6B79C815DD8A8B00EDA769 /* KomomuCommunityInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6B79C715DD8A8B00EDA769 /* KomomuCommunityInfoCell.xib */; };
+		BA70A8A915B5DD4000A6B381 /* LoginWithFacebookNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BA70A8A815B5DD4000A6B381 /* LoginWithFacebookNormal.png */; };
+		BA70A8AB15B5DD5900A6B381 /* LoginWithFacebookPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BA70A8AA15B5DD5900A6B381 /* LoginWithFacebookPressed.png */; };
+		BA70A8AD15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA70A8AC15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png */; };
+		BA70A8AF15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA70A8AE15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png */; };
+		BA84F7FA15D0130B002E4CA8 /* KomomuSearch1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84F7F815D0130B002E4CA8 /* KomomuSearch1ViewController.m */; };
+		BA84F7FB15D0130B002E4CA8 /* KomomuSearch1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA84F7F915D0130B002E4CA8 /* KomomuSearch1ViewController.xib */; };
+		BA915698163A083D00E7BEAE /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA91568B163A083D00E7BEAE /* FBDialog.bundle */; };
+		BA915699163A083D00E7BEAE /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA915691163A083D00E7BEAE /* libfacebook_ios_sdk.a */; };
+		BA9AA69D1638CBBF00D92B75 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9AA69C1638CBBF00D92B75 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BAA0EB1815935F0600478315 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0EB1715935F0600478315 /* UIKit.framework */; };
+		BAA0EB1A15935F0600478315 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0EB1915935F0600478315 /* Foundation.framework */; };
+		BAA0EB1C15935F0600478315 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0EB1B15935F0600478315 /* CoreGraphics.framework */; };
+		BAA0EB2215935F0600478315 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAA0EB2015935F0600478315 /* InfoPlist.strings */; };
+		BAA0EB2415935F0600478315 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0EB2315935F0600478315 /* main.m */; };
+		BAA0EB2815935F0600478315 /* KomomuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0EB2715935F0600478315 /* KomomuAppDelegate.m */; };
+		BAA0EB451593635100478315 /* KomomuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0EB431593635100478315 /* KomomuViewController.m */; };
+		BAA0EB461593635100478315 /* KomomuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA0EB441593635100478315 /* KomomuViewController.xib */; };
+		BAA0EB4A15936DD200478315 /* KomomuSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0EB4815936DD200478315 /* KomomuSearchViewController.m */; };
+		BAA0EB661593945F00478315 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA0EB651593945F00478315 /* background.png */; };
+		BAA0EB6815939C8600478315 /* blackbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA0EB6715939C8600478315 /* blackbutton.png */; };
+		BAA0EB6A1593B55900478315 /* KomomuSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA0EB691593B55900478315 /* KomomuSearchViewController.xib */; };
+		BAA1983A15B0971E00F70732 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA1983915B0971E00F70732 /* BaseViewController.m */; };
+		BAA1983E15B09B5500F70732 /* KomomuTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA1983D15B09B5500F70732 /* KomomuTabBarViewController.m */; };
+		BAA1984E15B09C9400F70732 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984015B09C9400F70732 /* 112-group.png */; };
+		BAA1984F15B09C9400F70732 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984115B09C9400F70732 /* 112-group@2x.png */; };
+		BAA1985015B09C9400F70732 /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984215B09C9400F70732 /* 123-id-card.png */; };
+		BAA1985115B09C9400F70732 /* 123-id-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984315B09C9400F70732 /* 123-id-card@2x.png */; };
+		BAA1985215B09C9400F70732 /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984415B09C9400F70732 /* 29-heart.png */; };
+		BAA1985315B09C9400F70732 /* 29-heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984515B09C9400F70732 /* 29-heart@2x.png */; };
+		BAA1985415B09C9400F70732 /* cameraTabBarItem.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984615B09C9400F70732 /* cameraTabBarItem.png */; };
+		BAA1985515B09C9400F70732 /* cameraTabBarItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984715B09C9400F70732 /* cameraTabBarItem@2x.png */; };
+		BAA1985815B09C9400F70732 /* Icon@2x_.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984A15B09C9400F70732 /* Icon@2x_.png */; };
+		BAA1985915B09C9400F70732 /* Icon_x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984B15B09C9400F70732 /* Icon_x.png */; };
+		BAA1985A15B09C9400F70732 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984C15B09C9400F70732 /* news.png */; };
+		BAA1985B15B09C9400F70732 /* news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1984D15B09C9400F70732 /* news@2x.png */; };
+		BAA1985E15B09DA400F70732 /* cameraTabBarItem.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1985C15B09DA400F70732 /* cameraTabBarItem.png */; };
+		BAA1985F15B09DA400F70732 /* cameraTabBarItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA1985D15B09DA400F70732 /* cameraTabBarItem@2x.png */; };
+		BAA5F06E159E47E900C3322D /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F06D159E47E800C3322D /* OverlayViewController.m */; };
+		BAA5F070159E498A00C3322D /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA5F06F159E498A00C3322D /* OverlayView.xib */; };
+		BAA5F0F615A2135D00C3322D /* SearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA5F0F515A2135C00C3322D /* SearchTableCell.xib */; };
+		BAA5F0F915A2149700C3322D /* KomomuSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F0F815A2149600C3322D /* KomomuSearchCell.m */; };
+		BAA5F0FB15A229D500C3322D /* iphone.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAA5F0FA15A229D500C3322D /* iphone.jpeg */; };
+		BAAE5472166E859900B403D4 /* KomomuWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAE5471166E859900B403D4 /* KomomuWebView.m */; };
+		BAAE5474166E865000B403D4 /* KomomuWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE5473166E865000B403D4 /* KomomuWebView.xib */; };
+		BAC935FE15C1BC6A0082CFD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC935FD15C1BC6A0082CFD0 /* CoreLocation.framework */; };
+		BADB659A15A5DED5002F9BB4 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB659915A5DED5002F9BB4 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc "; }; };
+		BADB65A115A5DEEF002F9BB4 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB659B15A5DEEF002F9BB4 /* blackArrow.png */; };
+		BADB65A215A5DEEF002F9BB4 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB659C15A5DEEF002F9BB4 /* blackArrow@2x.png */; };
+		BADB65A315A5DEEF002F9BB4 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB659D15A5DEEF002F9BB4 /* blueArrow.png */; };
+		BADB65A415A5DEEF002F9BB4 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB659E15A5DEEF002F9BB4 /* blueArrow@2x.png */; };
+		BADB65A515A5DEEF002F9BB4 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB659F15A5DEEF002F9BB4 /* grayArrow.png */; };
+		BADB65A615A5DEEF002F9BB4 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB65A015A5DEEF002F9BB4 /* grayArrow@2x.png */; };
+		BADB65A915A5DEF8002F9BB4 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB65A715A5DEF8002F9BB4 /* whiteArrow.png */; };
+		BADB65AA15A5DEF8002F9BB4 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB65A815A5DEF8002F9BB4 /* whiteArrow@2x.png */; };
+		BADB65AE15A5E27A002F9BB4 /* KomomuComunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB65AC15A5E27A002F9BB4 /* KomomuComunityViewController.m */; };
+		BADB65AF15A5E27A002F9BB4 /* KomomuComunityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADB65AD15A5E27A002F9BB4 /* KomomuComunityViewController.xib */; };
+		BADB65B215A72369002F9BB4 /* KomomuPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB65B115A72368002F9BB4 /* KomomuPostCell.m */; };
+		BADB65B415A72382002F9BB4 /* KomomuPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADB65B315A72382002F9BB4 /* KomomuPostCell.xib */; };
+		BADFC8BC1634C43000F4F664 /* action.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8AD1634C43000F4F664 /* action.png */; };
+		BADFC8BD1634C43000F4F664 /* action@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8AE1634C43000F4F664 /* action@2x.png */; };
+		BADFC8BE1634C43000F4F664 /* dotted-pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8AF1634C43000F4F664 /* dotted-pattern.png */; };
+		BADFC8BF1634C43000F4F664 /* dotted-pattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B01634C43000F4F664 /* dotted-pattern@2x.png */; };
+		BADFC8C01634C43000F4F664 /* inner-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B11634C43000F4F664 /* inner-shadow.png */; };
+		BADFC8C11634C43000F4F664 /* paperclip.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B21634C43000F4F664 /* paperclip.png */; };
+		BADFC8C21634C43000F4F664 /* paperclip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B31634C43000F4F664 /* paperclip@2x.png */; };
+		BADFC8C31634C43000F4F664 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B41634C43000F4F664 /* person.png */; };
+		BADFC8C41634C43000F4F664 /* person@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B51634C43000F4F664 /* person@2x.png */; };
+		BADFC8C51634C43000F4F664 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B61634C43000F4F664 /* reply.png */; };
+		BADFC8C61634C43000F4F664 /* reply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B71634C43000F4F664 /* reply@2x.png */; };
+		BADFC8C71634C43000F4F664 /* retweet-outline-button-item.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B81634C43000F4F664 /* retweet-outline-button-item.png */; };
+		BADFC8C81634C43000F4F664 /* retweet-outline-button-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8B91634C43000F4F664 /* retweet-outline-button-item@2x.png */; };
+		BADFC8C91634C43000F4F664 /* star-hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8BA1634C43000F4F664 /* star-hollow.png */; };
+		BADFC8CA1634C43000F4F664 /* star-hollow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADFC8BB1634C43000F4F664 /* star-hollow@2x.png */; };
+		BAF1BB0D1598B4E000414803 /* star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAF1BB0C1598B4E000414803 /* star.jpeg */; };
+		BAF1BB0F1598B4E500414803 /* star2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAF1BB0E1598B4E500414803 /* star2.jpeg */; };
+		BAF1BB141599033100414803 /* sortednames.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAF1BB131599033100414803 /* sortednames.plist */; };
+		BAF44F1215ACA57300D86F75 /* KomomuPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF44F1015ACA57300D86F75 /* KomomuPostViewController.m */; };
+		BAF44F1315ACA57300D86F75 /* KomomuPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF44F1115ACA57300D86F75 /* KomomuPostViewController.xib */; };
+		BAF44F1615ACA5CC00D86F75 /* ATPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF44F1515ACA5CC00D86F75 /* ATPagingView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAF44F1A15ACA61100D86F75 /* KomomuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF44F1915ACA61100D86F75 /* KomomuContentView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BA05EAB8159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MutableDeepCopy.h"; sourceTree = "<group>"; };
+		BA05EAB9159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MutableDeepCopy.m"; sourceTree = "<group>"; };
+		BA05EAC0159B595C00063AB0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		BA05EAC1159B595C00063AB0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		BA05EAC2159B595C00063AB0 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		BA05EAC3159B595C00063AB0 /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		BA05EAC4159B595C00063AB0 /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		BA05EAC5159B595C00063AB0 /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		BA05EAC6159B595C00063AB0 /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		BA05EAC7159B595C00063AB0 /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		BA05EAC8159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		BA05EAC9159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		BA05EACA159B595C00063AB0 /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		BA05EACB159B595C00063AB0 /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		BA05EACC159B595C00063AB0 /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		BA05EACD159B595C00063AB0 /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		BA05EACE159B595C00063AB0 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		BA05EAD0159B595C00063AB0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BA05EAD1159B595C00063AB0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BA05EADB159B59D400063AB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BA05EADD159B59DE00063AB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BA05EADF159B5AA100063AB0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BA05EAE5159B73A800063AB0 /* KomomuEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuEngine.h; sourceTree = "<group>"; };
+		BA05EAE6159B73A800063AB0 /* KomomuEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuEngine.m; sourceTree = "<group>"; };
+		BA1C95F115C326310002D33A /* KomomuProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuProfileViewController.h; sourceTree = "<group>"; };
+		BA1C95F215C326310002D33A /* KomomuProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuProfileViewController.m; sourceTree = "<group>"; };
+		BA1C95F315C326310002D33A /* KomomuProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuProfileViewController.xib; sourceTree = "<group>"; };
+		BA1C95F615C3265B0002D33A /* KomomuUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuUser.h; sourceTree = "<group>"; };
+		BA1C95F715C3265B0002D33A /* KomomuUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuUser.m; sourceTree = "<group>"; };
+		BA2363B716BEFEED0069CF41 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		BA2363BA16BEFF020069CF41 /* comment2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment2.png; sourceTree = "<group>"; };
+		BA2363BC16BF09CC0069CF41 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		BA2363BD16BF09D00069CF41 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		BA2363C016BF0CF60069CF41 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		BA2363C216BF0ECE0069CF41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../Downloads/Default.png; sourceTree = "<group>"; };
+		BA2363C316BF0ED20069CF41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../Downloads/Default@2x.png"; sourceTree = "<group>"; };
+		BA301B6616344269002B0B55 /* KomomuFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuFeedViewController.h; sourceTree = "<group>"; };
+		BA301B6716344269002B0B55 /* KomomuFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuFeedViewController.m; sourceTree = "<group>"; };
+		BA301B681634426A002B0B55 /* KomomuFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuFeedViewController.xib; sourceTree = "<group>"; };
+		BA301B6C16347B1C002B0B55 /* UIImageViewBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewBorder.h; sourceTree = "<group>"; };
+		BA301B6D16347B1D002B0B55 /* UIImageViewBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewBorder.m; sourceTree = "<group>"; };
+		BA30AC4115E81AB70024FDEE /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		BA30AC4215E81AB80024FDEE /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButton@2x.png"; sourceTree = "<group>"; };
+		BA30AC4615E81AC00024FDEE /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
+		BA30AC4715E81AC10024FDEE /* redButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redButton@2x.png"; sourceTree = "<group>"; };
+		BA31B18D16BF3C32006E1792 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BA31B19016BF61DD006E1792 /* KomomuCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuCommentViewController.h; sourceTree = "<group>"; };
+		BA31B19116BF61DE006E1792 /* KomomuCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuCommentViewController.m; sourceTree = "<group>"; };
+		BA31B19216BF61DE006E1792 /* KomomuCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuCommentViewController.xib; sourceTree = "<group>"; };
+		BA57CCA6166E79CF00EF1126 /* KomomuContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuContentView.xib; sourceTree = "<group>"; };
+		BA5A348316721EBE005F7FE5 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		BA5A3486167223C6005F7FE5 /* dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dislike.png; sourceTree = "<group>"; };
+		BA600A161674D08D0076EEFA /* KomomuEngineAux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuEngineAux.h; sourceTree = "<group>"; };
+		BA600A171674D08D0076EEFA /* KomomuEngineAux.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuEngineAux.m; sourceTree = "<group>"; };
+		BA600A1D1675794E0076EEFA /* like2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like2.png; sourceTree = "<group>"; };
+		BA600A1F1675795B0076EEFA /* dislike2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dislike2.png; sourceTree = "<group>"; };
+		BA63C2081673EEAB00BC2A3E /* MAConfirmButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAConfirmButton.h; sourceTree = "<group>"; };
+		BA63C2091673EEAB00BC2A3E /* MAConfirmButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAConfirmButton.m; sourceTree = "<group>"; };
+		BA63C20A1673EEAB00BC2A3E /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
+		BA63C20B1673EEAB00BC2A3E /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
+		BA6B79C415DD8A5300EDA769 /* KomomuCommunityInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuCommunityInfoCell.h; sourceTree = "<group>"; };
+		BA6B79C515DD8A5300EDA769 /* KomomuCommunityInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuCommunityInfoCell.m; sourceTree = "<group>"; };
+		BA6B79C715DD8A8B00EDA769 /* KomomuCommunityInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuCommunityInfoCell.xib; sourceTree = "<group>"; };
+		BA70A8A815B5DD4000A6B381 /* LoginWithFacebookNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginWithFacebookNormal.png; sourceTree = "<group>"; };
+		BA70A8AA15B5DD5900A6B381 /* LoginWithFacebookPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginWithFacebookPressed.png; sourceTree = "<group>"; };
+		BA70A8AC15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginWithFacebookNormal@2x.png"; sourceTree = "<group>"; };
+		BA70A8AE15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginWithFacebookPressed@2x.png"; sourceTree = "<group>"; };
+		BA84F7F715D0130B002E4CA8 /* KomomuSearch1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuSearch1ViewController.h; sourceTree = "<group>"; };
+		BA84F7F815D0130B002E4CA8 /* KomomuSearch1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuSearch1ViewController.m; sourceTree = "<group>"; };
+		BA84F7F915D0130B002E4CA8 /* KomomuSearch1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuSearch1ViewController.xib; sourceTree = "<group>"; };
+		BA915689163A083D00E7BEAE /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		BA91568A163A083D00E7BEAE /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		BA91568B163A083D00E7BEAE /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		BA91568C163A083D00E7BEAE /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		BA91568D163A083D00E7BEAE /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		BA91568E163A083D00E7BEAE /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		BA91568F163A083D00E7BEAE /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		BA915690163A083D00E7BEAE /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		BA915691163A083D00E7BEAE /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		BA915692163A083D00E7BEAE /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		BA915693163A083D00E7BEAE /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		BA915694163A083D00E7BEAE /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		BA915695163A083D00E7BEAE /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		BA915696163A083D00E7BEAE /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		BA915697163A083D00E7BEAE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		BA9AA69C1638CBBF00D92B75 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BAA0EB1315935F0600478315 /* Komomu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Komomu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA0EB1715935F0600478315 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BAA0EB1915935F0600478315 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BAA0EB1B15935F0600478315 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BAA0EB1F15935F0600478315 /* Komomu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Komomu-Info.plist"; sourceTree = "<group>"; };
+		BAA0EB2115935F0600478315 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAA0EB2315935F0600478315 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAA0EB2615935F0600478315 /* KomomuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KomomuAppDelegate.h; sourceTree = "<group>"; };
+		BAA0EB2715935F0600478315 /* KomomuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KomomuAppDelegate.m; sourceTree = "<group>"; };
+		BAA0EB421593635000478315 /* KomomuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuViewController.h; sourceTree = "<group>"; };
+		BAA0EB431593635100478315 /* KomomuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuViewController.m; sourceTree = "<group>"; };
+		BAA0EB441593635100478315 /* KomomuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuViewController.xib; sourceTree = "<group>"; };
+		BAA0EB4715936DD200478315 /* KomomuSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuSearchViewController.h; sourceTree = "<group>"; };
+		BAA0EB4815936DD200478315 /* KomomuSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuSearchViewController.m; sourceTree = "<group>"; };
+		BAA0EB651593945F00478315 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BAA0EB6715939C8600478315 /* blackbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton.png; sourceTree = "<group>"; };
+		BAA0EB691593B55900478315 /* KomomuSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuSearchViewController.xib; sourceTree = "<group>"; };
+		BAA0EB851594FD5600478315 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BAA1983815B0971E00F70732 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		BAA1983915B0971E00F70732 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BAA1983C15B09B5400F70732 /* KomomuTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuTabBarViewController.h; sourceTree = "<group>"; };
+		BAA1983D15B09B5500F70732 /* KomomuTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuTabBarViewController.m; sourceTree = "<group>"; };
+		BAA1984015B09C9400F70732 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		BAA1984115B09C9400F70732 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
+		BAA1984215B09C9400F70732 /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card.png"; sourceTree = "<group>"; };
+		BAA1984315B09C9400F70732 /* 123-id-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card@2x.png"; sourceTree = "<group>"; };
+		BAA1984415B09C9400F70732 /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
+		BAA1984515B09C9400F70732 /* 29-heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart@2x.png"; sourceTree = "<group>"; };
+		BAA1984615B09C9400F70732 /* cameraTabBarItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraTabBarItem.png; sourceTree = "<group>"; };
+		BAA1984715B09C9400F70732 /* cameraTabBarItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraTabBarItem@2x.png"; sourceTree = "<group>"; };
+		BAA1984A15B09C9400F70732 /* Icon@2x_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x_.png"; sourceTree = "<group>"; };
+		BAA1984B15B09C9400F70732 /* Icon_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_x.png; sourceTree = "<group>"; };
+		BAA1984C15B09C9400F70732 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		BAA1984D15B09C9400F70732 /* news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news@2x.png"; sourceTree = "<group>"; };
+		BAA1985C15B09DA400F70732 /* cameraTabBarItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraTabBarItem.png; sourceTree = "<group>"; };
+		BAA1985D15B09DA400F70732 /* cameraTabBarItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraTabBarItem@2x.png"; sourceTree = "<group>"; };
+		BAA5F06C159E47E800C3322D /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
+		BAA5F06D159E47E800C3322D /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		BAA5F06F159E498A00C3322D /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		BAA5F0F515A2135C00C3322D /* SearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableCell.xib; sourceTree = "<group>"; };
+		BAA5F0F715A2149500C3322D /* KomomuSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuSearchCell.h; sourceTree = "<group>"; };
+		BAA5F0F815A2149600C3322D /* KomomuSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuSearchCell.m; sourceTree = "<group>"; };
+		BAA5F0FA15A229D500C3322D /* iphone.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpeg; sourceTree = "<group>"; };
+		BAAE5470166E859900B403D4 /* KomomuWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuWebView.h; sourceTree = "<group>"; };
+		BAAE5471166E859900B403D4 /* KomomuWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuWebView.m; sourceTree = "<group>"; };
+		BAAE5473166E865000B403D4 /* KomomuWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuWebView.xib; sourceTree = "<group>"; };
+		BAC935FD15C1BC6A0082CFD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BAD298081639FB4B0013FFBA /* Komomu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Komomu-Prefix.pch"; sourceTree = "<group>"; };
+		BAD2980A1639FBC20013FFBA /* Komomu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Komomu-Prefix.pch"; sourceTree = "<group>"; };
+		BADB659815A5DED5002F9BB4 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		BADB659915A5DED5002F9BB4 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		BADB659B15A5DEEF002F9BB4 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		BADB659C15A5DEEF002F9BB4 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		BADB659D15A5DEEF002F9BB4 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		BADB659E15A5DEEF002F9BB4 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		BADB659F15A5DEEF002F9BB4 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		BADB65A015A5DEEF002F9BB4 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		BADB65A715A5DEF8002F9BB4 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		BADB65A815A5DEF8002F9BB4 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		BADB65AB15A5E27A002F9BB4 /* KomomuComunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuComunityViewController.h; sourceTree = "<group>"; };
+		BADB65AC15A5E27A002F9BB4 /* KomomuComunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuComunityViewController.m; sourceTree = "<group>"; };
+		BADB65AD15A5E27A002F9BB4 /* KomomuComunityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuComunityViewController.xib; sourceTree = "<group>"; };
+		BADB65B015A72368002F9BB4 /* KomomuPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuPostCell.h; sourceTree = "<group>"; };
+		BADB65B115A72368002F9BB4 /* KomomuPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuPostCell.m; sourceTree = "<group>"; };
+		BADB65B315A72382002F9BB4 /* KomomuPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuPostCell.xib; sourceTree = "<group>"; };
+		BADFC8AD1634C43000F4F664 /* action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action.png; sourceTree = "<group>"; };
+		BADFC8AE1634C43000F4F664 /* action@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action@2x.png"; sourceTree = "<group>"; };
+		BADFC8AF1634C43000F4F664 /* dotted-pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dotted-pattern.png"; sourceTree = "<group>"; };
+		BADFC8B01634C43000F4F664 /* dotted-pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dotted-pattern@2x.png"; sourceTree = "<group>"; };
+		BADFC8B11634C43000F4F664 /* inner-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inner-shadow.png"; sourceTree = "<group>"; };
+		BADFC8B21634C43000F4F664 /* paperclip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paperclip.png; sourceTree = "<group>"; };
+		BADFC8B31634C43000F4F664 /* paperclip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperclip@2x.png"; sourceTree = "<group>"; };
+		BADFC8B41634C43000F4F664 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		BADFC8B51634C43000F4F664 /* person@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person@2x.png"; sourceTree = "<group>"; };
+		BADFC8B61634C43000F4F664 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		BADFC8B71634C43000F4F664 /* reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reply@2x.png"; sourceTree = "<group>"; };
+		BADFC8B81634C43000F4F664 /* retweet-outline-button-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-outline-button-item.png"; sourceTree = "<group>"; };
+		BADFC8B91634C43000F4F664 /* retweet-outline-button-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-outline-button-item@2x.png"; sourceTree = "<group>"; };
+		BADFC8BA1634C43000F4F664 /* star-hollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-hollow.png"; sourceTree = "<group>"; };
+		BADFC8BB1634C43000F4F664 /* star-hollow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-hollow@2x.png"; sourceTree = "<group>"; };
+		BAF1BB0C1598B4E000414803 /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpeg; sourceTree = "<group>"; };
+		BAF1BB0E1598B4E500414803 /* star2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star2.jpeg; sourceTree = "<group>"; };
+		BAF1BB131599033100414803 /* sortednames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sortednames.plist; sourceTree = "<group>"; };
+		BAF44F0F15ACA57300D86F75 /* KomomuPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuPostViewController.h; sourceTree = "<group>"; };
+		BAF44F1015ACA57300D86F75 /* KomomuPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuPostViewController.m; sourceTree = "<group>"; };
+		BAF44F1115ACA57300D86F75 /* KomomuPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuPostViewController.xib; sourceTree = "<group>"; };
+		BAF44F1415ACA5CC00D86F75 /* ATPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPagingView.h; sourceTree = "<group>"; };
+		BAF44F1515ACA5CC00D86F75 /* ATPagingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPagingView.m; sourceTree = "<group>"; };
+		BAF44F1815ACA61100D86F75 /* KomomuContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuContentView.h; sourceTree = "<group>"; };
+		BAF44F1915ACA61100D86F75 /* KomomuContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuContentView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAA0EB1015935F0600478315 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA31B18E16BF3C32006E1792 /* MessageUI.framework in Frameworks */,
+				BA9AA69D1638CBBF00D92B75 /* Accounts.framework in Frameworks */,
+				BAC935FE15C1BC6A0082CFD0 /* CoreLocation.framework in Frameworks */,
+				BAA0EB1815935F0600478315 /* UIKit.framework in Frameworks */,
+				BA05EAE1159B5AF600063AB0 /* CFNetwork.framework in Frameworks */,
+				BA05EAE3159B5AFB00063AB0 /* Security.framework in Frameworks */,
+				BAA0EB1A15935F0600478315 /* Foundation.framework in Frameworks */,
+				BA05EAE4159B5AFD00063AB0 /* QuartzCore.framework in Frameworks */,
+				BA05EAE2159B5AF800063AB0 /* SystemConfiguration.framework in Frameworks */,
+				BAA0EB1C15935F0600478315 /* CoreGraphics.framework in Frameworks */,
+				BA915699163A083D00E7BEAE /* libfacebook_ios_sdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA05EABC159B595C00063AB0 /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				BA05EABD159B595C00063AB0 /* Categories */,
+				BA05EACA159B595C00063AB0 /* MKNetworkEngine.h */,
+				BA05EACB159B595C00063AB0 /* MKNetworkEngine.m */,
+				BA05EACC159B595C00063AB0 /* MKNetworkKit.h */,
+				BA05EACD159B595C00063AB0 /* MKNetworkOperation.h */,
+				BA05EACE159B595C00063AB0 /* MKNetworkOperation.m */,
+				BA05EACF159B595C00063AB0 /* Reachability */,
+			);
+			path = MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		BA05EABD159B595C00063AB0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BA05EAC0159B595C00063AB0 /* NSData+Base64.h */,
+				BA05EAC1159B595C00063AB0 /* NSData+Base64.m */,
+				BA05EAC2159B595C00063AB0 /* NSDate+RFC1123.h */,
+				BA05EAC3159B595C00063AB0 /* NSDate+RFC1123.m */,
+				BA05EAC4159B595C00063AB0 /* NSDictionary+RequestEncoding.h */,
+				BA05EAC5159B595C00063AB0 /* NSDictionary+RequestEncoding.m */,
+				BA05EAC6159B595C00063AB0 /* NSString+MKNetworkKitAdditions.h */,
+				BA05EAC7159B595C00063AB0 /* NSString+MKNetworkKitAdditions.m */,
+				BA05EAC8159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.h */,
+				BA05EAC9159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		BA05EACF159B595C00063AB0 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				BA05EAD0159B595C00063AB0 /* Reachability.h */,
+				BA05EAD1159B595C00063AB0 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		BA18132315A4D85D0000F6A9 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				BAA1983815B0971E00F70732 /* BaseViewController.h */,
+				BAA1983915B0971E00F70732 /* BaseViewController.m */,
+				BADB65B015A72368002F9BB4 /* KomomuPostCell.h */,
+				BADB65B115A72368002F9BB4 /* KomomuPostCell.m */,
+				BADB65B315A72382002F9BB4 /* KomomuPostCell.xib */,
+				BADB65AB15A5E27A002F9BB4 /* KomomuComunityViewController.h */,
+				BADB65AC15A5E27A002F9BB4 /* KomomuComunityViewController.m */,
+				BADB65AD15A5E27A002F9BB4 /* KomomuComunityViewController.xib */,
+				BAA1983C15B09B5400F70732 /* KomomuTabBarViewController.h */,
+				BAA1983D15B09B5500F70732 /* KomomuTabBarViewController.m */,
+				BADB659615A5DEA8002F9BB4 /* RefreshTableHeaderView */,
+				BA6B79C415DD8A5300EDA769 /* KomomuCommunityInfoCell.h */,
+				BA6B79C515DD8A5300EDA769 /* KomomuCommunityInfoCell.m */,
+				BA6B79C715DD8A8B00EDA769 /* KomomuCommunityInfoCell.xib */,
+				BA301B6616344269002B0B55 /* KomomuFeedViewController.h */,
+				BA301B6716344269002B0B55 /* KomomuFeedViewController.m */,
+				BA301B681634426A002B0B55 /* KomomuFeedViewController.xib */,
+				BA301B6C16347B1C002B0B55 /* UIImageViewBorder.h */,
+				BA301B6D16347B1D002B0B55 /* UIImageViewBorder.m */,
+				BA31B19016BF61DD006E1792 /* KomomuCommentViewController.h */,
+				BA31B19116BF61DE006E1792 /* KomomuCommentViewController.m */,
+				BA31B19216BF61DE006E1792 /* KomomuCommentViewController.xib */,
+			);
+			name = Community;
+			sourceTree = "<group>";
+		};
+		BA1C95EF15C326150002D33A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BA1C95F115C326310002D33A /* KomomuProfileViewController.h */,
+				BA1C95F215C326310002D33A /* KomomuProfileViewController.m */,
+				BA1C95F315C326310002D33A /* KomomuProfileViewController.xib */,
+				BA1C95F615C3265B0002D33A /* KomomuUser.h */,
+				BA1C95F715C3265B0002D33A /* KomomuUser.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		BA63C2071673EEAB00BC2A3E /* MAConfirmButton */ = {
+			isa = PBXGroup;
+			children = (
+				BA63C2081673EEAB00BC2A3E /* MAConfirmButton.h */,
+				BA63C2091673EEAB00BC2A3E /* MAConfirmButton.m */,
+				BA63C20A1673EEAB00BC2A3E /* UIColor-Expanded.h */,
+				BA63C20B1673EEAB00BC2A3E /* UIColor-Expanded.m */,
+			);
+			path = MAConfirmButton;
+			sourceTree = "<group>";
+		};
+		BA915688163A083D00E7BEAE /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				BA915689163A083D00E7BEAE /* Facebook.h */,
+				BA91568A163A083D00E7BEAE /* FBConnect.h */,
+				BA91568B163A083D00E7BEAE /* FBDialog.bundle */,
+				BA91568C163A083D00E7BEAE /* FBDialog.h */,
+				BA91568D163A083D00E7BEAE /* FBFrictionlessRequestSettings.h */,
+				BA91568E163A083D00E7BEAE /* FBLoginDialog.h */,
+				BA91568F163A083D00E7BEAE /* FBRequest.h */,
+				BA915690163A083D00E7BEAE /* JSON.h */,
+				BA915691163A083D00E7BEAE /* libfacebook_ios_sdk.a */,
+				BA915692163A083D00E7BEAE /* NSObject+SBJSON.h */,
+				BA915693163A083D00E7BEAE /* NSString+SBJSON.h */,
+				BA915694163A083D00E7BEAE /* SBJSON.h */,
+				BA915695163A083D00E7BEAE /* SBJsonBase.h */,
+				BA915696163A083D00E7BEAE /* SBJsonParser.h */,
+				BA915697163A083D00E7BEAE /* SBJsonWriter.h */,
+			);
+			path = "facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+		BAA0EB0815935F0600478315 = {
+			isa = PBXGroup;
+			children = (
+				BA31B18D16BF3C32006E1792 /* MessageUI.framework */,
+				BA2363C016BF0CF60069CF41 /* icon.png */,
+				BA9AA69C1638CBBF00D92B75 /* Accounts.framework */,
+				BAC935FD15C1BC6A0082CFD0 /* CoreLocation.framework */,
+				BAA0EB1D15935F0600478315 /* Komomu */,
+				BAA0EB1615935F0600478315 /* Frameworks */,
+				BAA0EB1415935F0600478315 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAA0EB1415935F0600478315 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAA0EB1315935F0600478315 /* Komomu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAA0EB1615935F0600478315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA05EADF159B5AA100063AB0 /* CFNetwork.framework */,
+				BA05EADD159B59DE00063AB0 /* SystemConfiguration.framework */,
+				BA05EADB159B59D400063AB0 /* Security.framework */,
+				BAA0EB851594FD5600478315 /* QuartzCore.framework */,
+				BAA0EB1715935F0600478315 /* UIKit.framework */,
+				BAA0EB1915935F0600478315 /* Foundation.framework */,
+				BAA0EB1B15935F0600478315 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAA0EB1D15935F0600478315 /* Komomu */ = {
+			isa = PBXGroup;
+			children = (
+				BA63C2071673EEAB00BC2A3E /* MAConfirmButton */,
+				BA915688163A083D00E7BEAE /* facebook-ios-sdk */,
+				BA1C95EF15C326150002D33A /* Profile */,
+				BA05EABC159B595C00063AB0 /* MKNetworkKit */,
+				BAF44ECE15AC62D100D86F75 /* Post */,
+				BA18132315A4D85D0000F6A9 /* Community */,
+				BAA0EB641593944800478315 /* Resources */,
+				BAA0EB5D15938F9200478315 /* Home */,
+				BAA0EB50159371F100478315 /* Search */,
+				BAA0EB2615935F0600478315 /* KomomuAppDelegate.h */,
+				BAA0EB2715935F0600478315 /* KomomuAppDelegate.m */,
+				BA600A161674D08D0076EEFA /* KomomuEngineAux.h */,
+				BA600A171674D08D0076EEFA /* KomomuEngineAux.m */,
+				BA05EAE5159B73A800063AB0 /* KomomuEngine.h */,
+				BA05EAE6159B73A800063AB0 /* KomomuEngine.m */,
+				BAA0EB1E15935F0600478315 /* Supporting Files */,
+			);
+			path = Komomu;
+			sourceTree = "<group>";
+		};
+		BAA0EB1E15935F0600478315 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAD2980A1639FBC20013FFBA /* Komomu-Prefix.pch */,
+				BAA0EB1F15935F0600478315 /* Komomu-Info.plist */,
+				BAA0EB2015935F0600478315 /* InfoPlist.strings */,
+				BAA0EB2315935F0600478315 /* main.m */,
+				BAD298081639FB4B0013FFBA /* Komomu-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAA0EB50159371F100478315 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BAA5F06C159E47E800C3322D /* OverlayViewController.h */,
+				BAA5F06D159E47E800C3322D /* OverlayViewController.m */,
+				BAA5F06F159E498A00C3322D /* OverlayView.xib */,
+				BAF1BB131599033100414803 /* sortednames.plist */,
+				BA05EAB8159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.h */,
+				BA05EAB9159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.m */,
+				BAA0EB4715936DD200478315 /* KomomuSearchViewController.h */,
+				BAA0EB4815936DD200478315 /* KomomuSearchViewController.m */,
+				BAA0EB691593B55900478315 /* KomomuSearchViewController.xib */,
+				BAA5F0F515A2135C00C3322D /* SearchTableCell.xib */,
+				BAA5F0F715A2149500C3322D /* KomomuSearchCell.h */,
+				BAA5F0F815A2149600C3322D /* KomomuSearchCell.m */,
+				BA84F7F715D0130B002E4CA8 /* KomomuSearch1ViewController.h */,
+				BA84F7F815D0130B002E4CA8 /* KomomuSearch1ViewController.m */,
+				BA84F7F915D0130B002E4CA8 /* KomomuSearch1ViewController.xib */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		BAA0EB5D15938F9200478315 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BAA0EB421593635000478315 /* KomomuViewController.h */,
+				BAA0EB431593635100478315 /* KomomuViewController.m */,
+				BAA0EB441593635100478315 /* KomomuViewController.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		BAA0EB641593944800478315 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA5A3486167223C6005F7FE5 /* dislike.png */,
+				BA600A1D1675794E0076EEFA /* like2.png */,
+				BA2363BA16BEFF020069CF41 /* comment2.png */,
+				BA600A1F1675795B0076EEFA /* dislike2.png */,
+				BA2363BC16BF09CC0069CF41 /* search.png */,
+				BA2363BD16BF09D00069CF41 /* search@2x.png */,
+				BA2363B716BEFEED0069CF41 /* comment.png */,
+				BA5A348316721EBE005F7FE5 /* like.png */,
+				BADFC8AC1634C43000F4F664 /* Images */,
+				BAA1983F15B09C9400F70732 /* Instagram */,
+				BAA0EB651593945F00478315 /* background.png */,
+				BA30AC4615E81AC00024FDEE /* redButton.png */,
+				BA30AC4715E81AC10024FDEE /* redButton@2x.png */,
+				BA30AC4115E81AB70024FDEE /* greenButton.png */,
+				BA30AC4215E81AB80024FDEE /* greenButton@2x.png */,
+				BAA1985C15B09DA400F70732 /* cameraTabBarItem.png */,
+				BAA1985D15B09DA400F70732 /* cameraTabBarItem@2x.png */,
+				BAF1BB0C1598B4E000414803 /* star.jpeg */,
+				BADB659B15A5DEEF002F9BB4 /* blackArrow.png */,
+				BADB659C15A5DEEF002F9BB4 /* blackArrow@2x.png */,
+				BADB659D15A5DEEF002F9BB4 /* blueArrow.png */,
+				BADB659E15A5DEEF002F9BB4 /* blueArrow@2x.png */,
+				BADB659F15A5DEEF002F9BB4 /* grayArrow.png */,
+				BADB65A715A5DEF8002F9BB4 /* whiteArrow.png */,
+				BADB65A815A5DEF8002F9BB4 /* whiteArrow@2x.png */,
+				BADB65A015A5DEEF002F9BB4 /* grayArrow@2x.png */,
+				BAF1BB0E1598B4E500414803 /* star2.jpeg */,
+				BAA5F0FA15A229D500C3322D /* iphone.jpeg */,
+				BAA0EB6715939C8600478315 /* blackbutton.png */,
+				BA70A8A815B5DD4000A6B381 /* LoginWithFacebookNormal.png */,
+				BA2363C216BF0ECE0069CF41 /* Default.png */,
+				BA2363C316BF0ED20069CF41 /* Default@2x.png */,
+				BA70A8AC15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png */,
+				BA70A8AA15B5DD5900A6B381 /* LoginWithFacebookPressed.png */,
+				BA70A8AE15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BAA1983F15B09C9400F70732 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				BAA1984015B09C9400F70732 /* 112-group.png */,
+				BAA1984115B09C9400F70732 /* 112-group@2x.png */,
+				BAA1984215B09C9400F70732 /* 123-id-card.png */,
+				BAA1984315B09C9400F70732 /* 123-id-card@2x.png */,
+				BAA1984415B09C9400F70732 /* 29-heart.png */,
+				BAA1984515B09C9400F70732 /* 29-heart@2x.png */,
+				BAA1984615B09C9400F70732 /* cameraTabBarItem.png */,
+				BAA1984715B09C9400F70732 /* cameraTabBarItem@2x.png */,
+				BAA1984A15B09C9400F70732 /* Icon@2x_.png */,
+				BAA1984B15B09C9400F70732 /* Icon_x.png */,
+				BAA1984C15B09C9400F70732 /* news.png */,
+				BAA1984D15B09C9400F70732 /* news@2x.png */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		BADB659615A5DEA8002F9BB4 /* RefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BADB659815A5DED5002F9BB4 /* EGORefreshTableHeaderView.h */,
+				BADB659915A5DED5002F9BB4 /* EGORefreshTableHeaderView.m */,
+			);
+			name = RefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		BADFC8AC1634C43000F4F664 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BADFC8AD1634C43000F4F664 /* action.png */,
+				BADFC8AE1634C43000F4F664 /* action@2x.png */,
+				BADFC8AF1634C43000F4F664 /* dotted-pattern.png */,
+				BADFC8B01634C43000F4F664 /* dotted-pattern@2x.png */,
+				BADFC8B11634C43000F4F664 /* inner-shadow.png */,
+				BADFC8B21634C43000F4F664 /* paperclip.png */,
+				BADFC8B31634C43000F4F664 /* paperclip@2x.png */,
+				BADFC8B41634C43000F4F664 /* person.png */,
+				BADFC8B51634C43000F4F664 /* person@2x.png */,
+				BADFC8B61634C43000F4F664 /* reply.png */,
+				BADFC8B71634C43000F4F664 /* reply@2x.png */,
+				BADFC8B81634C43000F4F664 /* retweet-outline-button-item.png */,
+				BADFC8B91634C43000F4F664 /* retweet-outline-button-item@2x.png */,
+				BADFC8BA1634C43000F4F664 /* star-hollow.png */,
+				BADFC8BB1634C43000F4F664 /* star-hollow@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BAF44ECE15AC62D100D86F75 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				BAF44F1715ACA5D800D86F75 /* ATPagingView */,
+				BAF44F0F15ACA57300D86F75 /* KomomuPostViewController.h */,
+				BAF44F1015ACA57300D86F75 /* KomomuPostViewController.m */,
+				BAF44F1115ACA57300D86F75 /* KomomuPostViewController.xib */,
+				BAF44F1815ACA61100D86F75 /* KomomuContentView.h */,
+				BAF44F1915ACA61100D86F75 /* KomomuContentView.m */,
+				BA57CCA6166E79CF00EF1126 /* KomomuContentView.xib */,
+				BAAE5470166E859900B403D4 /* KomomuWebView.h */,
+				BAAE5471166E859900B403D4 /* KomomuWebView.m */,
+				BAAE5473166E865000B403D4 /* KomomuWebView.xib */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		BAF44F1715ACA5D800D86F75 /* ATPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				BAF44F1415ACA5CC00D86F75 /* ATPagingView.h */,
+				BAF44F1515ACA5CC00D86F75 /* ATPagingView.m */,
+			);
+			name = ATPagingView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAA0EB1215935F0600478315 /* Komomu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAA0EB3F15935F0600478315 /* Build configuration list for PBXNativeTarget "Komomu" */;
+			buildPhases = (
+				BAA0EB0F15935F0600478315 /* Sources */,
+				BAA0EB1015935F0600478315 /* Frameworks */,
+				BAA0EB1115935F0600478315 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Komomu;
+			productName = Komomu;
+			productReference = BAA0EB1315935F0600478315 /* Komomu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAA0EB0A15935F0600478315 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Komomu;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = BAA0EB0D15935F0600478315 /* Build configuration list for PBXProject "Komomu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BAA0EB0815935F0600478315;
+			productRefGroup = BAA0EB1415935F0600478315 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAA0EB1215935F0600478315 /* Komomu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAA0EB1115935F0600478315 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAA0EB2215935F0600478315 /* InfoPlist.strings in Resources */,
+				BAA0EB461593635100478315 /* KomomuViewController.xib in Resources */,
+				BAA0EB661593945F00478315 /* background.png in Resources */,
+				BAA0EB6815939C8600478315 /* blackbutton.png in Resources */,
+				BAA0EB6A1593B55900478315 /* KomomuSearchViewController.xib in Resources */,
+				BAF1BB0D1598B4E000414803 /* star.jpeg in Resources */,
+				BAF1BB0F1598B4E500414803 /* star2.jpeg in Resources */,
+				BAF1BB141599033100414803 /* sortednames.plist in Resources */,
+				BAA5F070159E498A00C3322D /* OverlayView.xib in Resources */,
+				BAA5F0F615A2135D00C3322D /* SearchTableCell.xib in Resources */,
+				BAA5F0FB15A229D500C3322D /* iphone.jpeg in Resources */,
+				BADB65A115A5DEEF002F9BB4 /* blackArrow.png in Resources */,
+				BADB65A215A5DEEF002F9BB4 /* blackArrow@2x.png in Resources */,
+				BADB65A315A5DEEF002F9BB4 /* blueArrow.png in Resources */,
+				BADB65A415A5DEEF002F9BB4 /* blueArrow@2x.png in Resources */,
+				BADB65A515A5DEEF002F9BB4 /* grayArrow.png in Resources */,
+				BADB65A615A5DEEF002F9BB4 /* grayArrow@2x.png in Resources */,
+				BADB65A915A5DEF8002F9BB4 /* whiteArrow.png in Resources */,
+				BADB65AA15A5DEF8002F9BB4 /* whiteArrow@2x.png in Resources */,
+				BADB65AF15A5E27A002F9BB4 /* KomomuComunityViewController.xib in Resources */,
+				BADB65B415A72382002F9BB4 /* KomomuPostCell.xib in Resources */,
+				BAF44F1315ACA57300D86F75 /* KomomuPostViewController.xib in Resources */,
+				BAA1984E15B09C9400F70732 /* 112-group.png in Resources */,
+				BAA1984F15B09C9400F70732 /* 112-group@2x.png in Resources */,
+				BAA1985015B09C9400F70732 /* 123-id-card.png in Resources */,
+				BAA1985115B09C9400F70732 /* 123-id-card@2x.png in Resources */,
+				BAA1985215B09C9400F70732 /* 29-heart.png in Resources */,
+				BAA1985315B09C9400F70732 /* 29-heart@2x.png in Resources */,
+				BAA1985415B09C9400F70732 /* cameraTabBarItem.png in Resources */,
+				BAA1985515B09C9400F70732 /* cameraTabBarItem@2x.png in Resources */,
+				BAA1985815B09C9400F70732 /* Icon@2x_.png in Resources */,
+				BAA1985915B09C9400F70732 /* Icon_x.png in Resources */,
+				BAA1985A15B09C9400F70732 /* news.png in Resources */,
+				BAA1985B15B09C9400F70732 /* news@2x.png in Resources */,
+				BAA1985E15B09DA400F70732 /* cameraTabBarItem.png in Resources */,
+				BAA1985F15B09DA400F70732 /* cameraTabBarItem@2x.png in Resources */,
+				BA70A8A915B5DD4000A6B381 /* LoginWithFacebookNormal.png in Resources */,
+				BA70A8AB15B5DD5900A6B381 /* LoginWithFacebookPressed.png in Resources */,
+				BA70A8AD15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png in Resources */,
+				BA70A8AF15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png in Resources */,
+				BA1C95F515C326310002D33A /* KomomuProfileViewController.xib in Resources */,
+				BA84F7FB15D0130B002E4CA8 /* KomomuSearch1ViewController.xib in Resources */,
+				BA6B79C815DD8A8B00EDA769 /* KomomuCommunityInfoCell.xib in Resources */,
+				BA30AC4315E81AB80024FDEE /* greenButton.png in Resources */,
+				BA30AC4415E81AB80024FDEE /* greenButton@2x.png in Resources */,
+				BA30AC4815E81AC10024FDEE /* redButton.png in Resources */,
+				BA30AC4915E81AC10024FDEE /* redButton@2x.png in Resources */,
+				BA301B6A1634426A002B0B55 /* KomomuFeedViewController.xib in Resources */,
+				BADFC8BC1634C43000F4F664 /* action.png in Resources */,
+				BADFC8BD1634C43000F4F664 /* action@2x.png in Resources */,
+				BADFC8BE1634C43000F4F664 /* dotted-pattern.png in Resources */,
+				BADFC8BF1634C43000F4F664 /* dotted-pattern@2x.png in Resources */,
+				BADFC8C01634C43000F4F664 /* inner-shadow.png in Resources */,
+				BADFC8C11634C43000F4F664 /* paperclip.png in Resources */,
+				BADFC8C21634C43000F4F664 /* paperclip@2x.png in Resources */,
+				BADFC8C31634C43000F4F664 /* person.png in Resources */,
+				BADFC8C41634C43000F4F664 /* person@2x.png in Resources */,
+				BADFC8C51634C43000F4F664 /* reply.png in Resources */,
+				BADFC8C61634C43000F4F664 /* reply@2x.png in Resources */,
+				BADFC8C71634C43000F4F664 /* retweet-outline-button-item.png in Resources */,
+				BADFC8C81634C43000F4F664 /* retweet-outline-button-item@2x.png in Resources */,
+				BADFC8C91634C43000F4F664 /* star-hollow.png in Resources */,
+				BADFC8CA1634C43000F4F664 /* star-hollow@2x.png in Resources */,
+				BA915698163A083D00E7BEAE /* FBDialog.bundle in Resources */,
+				BA57CCA7166E79CF00EF1126 /* KomomuContentView.xib in Resources */,
+				BAAE5474166E865000B403D4 /* KomomuWebView.xib in Resources */,
+				BA5A348416721EC2005F7FE5 /* like.png in Resources */,
+				BA5A3487167223C9005F7FE5 /* dislike.png in Resources */,
+				BA600A1E1675794E0076EEFA /* like2.png in Resources */,
+				BA600A201675795B0076EEFA /* dislike2.png in Resources */,
+				BA2363B816BEFEF10069CF41 /* comment.png in Resources */,
+				BA2363BB16BEFF050069CF41 /* comment2.png in Resources */,
+				BA2363BE16BF09D40069CF41 /* search.png in Resources */,
+				BA2363BF16BF09D40069CF41 /* search@2x.png in Resources */,
+				BA2363C116BF0CF80069CF41 /* icon.png in Resources */,
+				BA2363C416BF0ED60069CF41 /* Default.png in Resources */,
+				BA2363C516BF0ED60069CF41 /* Default@2x.png in Resources */,
+				BA31B19416BF61DE006E1792 /* KomomuCommentViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAA0EB0F15935F0600478315 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAA0EB2415935F0600478315 /* main.m in Sources */,
+				BAA0EB2815935F0600478315 /* KomomuAppDelegate.m in Sources */,
+				BAA0EB451593635100478315 /* KomomuViewController.m in Sources */,
+				BAA0EB4A15936DD200478315 /* KomomuSearchViewController.m in Sources */,
+				BA05EABA159A3E2300063AB0 /* NSDictionary+MutableDeepCopy.m in Sources */,
+				BA05EAD3159B595C00063AB0 /* NSData+Base64.m in Sources */,
+				BA05EAD4159B595C00063AB0 /* NSDate+RFC1123.m in Sources */,
+				BA05EAD5159B595C00063AB0 /* NSDictionary+RequestEncoding.m in Sources */,
+				BA05EAD6159B595C00063AB0 /* NSString+MKNetworkKitAdditions.m in Sources */,
+				BA05EAD7159B595C00063AB0 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				BA05EAD8159B595C00063AB0 /* MKNetworkEngine.m in Sources */,
+				BA05EAD9159B595C00063AB0 /* MKNetworkOperation.m in Sources */,
+				BA05EADA159B595C00063AB0 /* Reachability.m in Sources */,
+				BA05EAE7159B73A800063AB0 /* KomomuEngine.m in Sources */,
+				BAA5F06E159E47E900C3322D /* OverlayViewController.m in Sources */,
+				BAA5F0F915A2149700C3322D /* KomomuSearchCell.m in Sources */,
+				BADB659A15A5DED5002F9BB4 /* EGORefreshTableHeaderView.m in Sources */,
+				BADB65AE15A5E27A002F9BB4 /* KomomuComunityViewController.m in Sources */,
+				BADB65B215A72369002F9BB4 /* KomomuPostCell.m in Sources */,
+				BAF44F1215ACA57300D86F75 /* KomomuPostViewController.m in Sources */,
+				BAF44F1615ACA5CC00D86F75 /* ATPagingView.m in Sources */,
+				BAF44F1A15ACA61100D86F75 /* KomomuContentView.m in Sources */,
+				BAA1983A15B0971E00F70732 /* BaseViewController.m in Sources */,
+				BAA1983E15B09B5500F70732 /* KomomuTabBarViewController.m in Sources */,
+				BA1C95F415C326310002D33A /* KomomuProfileViewController.m in Sources */,
+				BA1C95F815C3265B0002D33A /* KomomuUser.m in Sources */,
+				BA84F7FA15D0130B002E4CA8 /* KomomuSearch1ViewController.m in Sources */,
+				BA6B79C615DD8A5300EDA769 /* KomomuCommunityInfoCell.m in Sources */,
+				BA301B691634426A002B0B55 /* KomomuFeedViewController.m in Sources */,
+				BA301B6E16347B1E002B0B55 /* UIImageViewBorder.m in Sources */,
+				BAAE5472166E859900B403D4 /* KomomuWebView.m in Sources */,
+				BA63C20C1673EEAB00BC2A3E /* MAConfirmButton.m in Sources */,
+				BA63C20D1673EEAB00BC2A3E /* UIColor-Expanded.m in Sources */,
+				BA600A181674D08D0076EEFA /* KomomuEngineAux.m in Sources */,
+				BA31B19316BF61DE006E1792 /* KomomuCommentViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BAA0EB2015935F0600478315 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAA0EB2115935F0600478315 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAA0EB3D15935F0600478315 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAA0EB3E15935F0600478315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAA0EB4015935F0600478315 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Komomu/Komomu-Prefix.pch";
+				INFOPLIST_FILE = "Komomu/Komomu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Komomu/facebook-ios-sdk\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/facebook-ios-sdk.build/Release-iphoneos/facebook-ios-sdk.build/Objects-normal/armv6\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/facebook-ios-sdk.build/Release-iphoneos/facebook-ios-sdk.build/Objects-normal/armv7\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/lib/facebook-ios-sdk\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/lib/facebook-ios-sdk\"",
+				);
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BAA0EB4115935F0600478315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Komomu/Komomu-Prefix.pch";
+				INFOPLIST_FILE = "Komomu/Komomu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Komomu/facebook-ios-sdk\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/facebook-ios-sdk.build/Release-iphoneos/facebook-ios-sdk.build/Objects-normal/armv6\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/facebook-ios-sdk.build/Release-iphoneos/facebook-ios-sdk.build/Objects-normal/armv7\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/Release-iphoneos\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/build/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/scripts/facebook-ios-sdk/lib/facebook-ios-sdk\"",
+					"\"$(SRCROOT)/../../projetos/facebook-ios-sdk/lib/facebook-ios-sdk\"",
+				);
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAA0EB0D15935F0600478315 /* Build configuration list for PBXProject "Komomu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA0EB3D15935F0600478315 /* Debug */,
+				BAA0EB3E15935F0600478315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAA0EB3F15935F0600478315 /* Build configuration list for PBXNativeTarget "Komomu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA0EB4015935F0600478315 /* Debug */,
+				BAA0EB4115935F0600478315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAA0EB0A15935F0600478315 /* Project object */;
+}
