@@ -10,4 +10,5 @@
 
 @interface NSDictionary (MutableDeepCopy)
 - (NSMutableDictionary *)mutableDeepCopy;
+- (NSMutableDictionary *)mutableSingleCopy;
 @end

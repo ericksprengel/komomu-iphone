@@ -30,4 +30,24 @@
     return returnDict; 
 }
 
+- (NSMutableDictionary *)mutableSingleCopy {
+    NSMutableDictionary *returnDict = [[NSMutableDictionary alloc] initWithCapacity:[self count]]; 
+    NSArray *keys = [self allKeys];
+    for (id key in keys) {
+        id oneValue = [self objectForKey:key]; 
+        id oneCopy = nil;
+        if([oneValue count] && ([[[oneValue valueForKey:@"user_liked"] lastObject] intValue] >= 1)) {
+
+            if ([oneValue respondsToSelector:@selector(mutableSingleCopy)]) 
+                oneCopy = [oneValue mutableSingleCopy];
+            else if ([oneValue respondsToSelector:@selector(mutableCopy)]) 
+                oneCopy = [oneValue mutableCopy];
+            if (oneCopy == nil)
+                oneCopy = [oneValue copy];
+            [returnDict setValue:oneCopy forKey:key];
+        }
+    }
+    return returnDict; 
+}
+
 @end

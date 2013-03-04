@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KomomuCommentViewController : UIViewController
+@interface KomomuCommentViewController : UIViewController {
+    IBOutlet UIWebView *webView;
+}
+
+@property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, retain) NSString *post_ID;
+
 
 @end

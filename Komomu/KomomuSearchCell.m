@@ -17,6 +17,8 @@
 @synthesize descriptionLabel = _descriptionLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
 @synthesize imageLoadingOperation = imageLoadingOperation_;
+@synthesize following = _following;
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,13 +36,20 @@
     // Configure the view for the selected state
 }
 
+-(void) setTableData2{
+    self.nameLabel.text = @"123";
+    self.thumbnailImageView = nil;
+    self.descriptionLabel.text = nil;
+}
 
 -(void) setTableData:(NSDictionary*) data {
     NSString *loadingImageURLString = [data objectForKey:@"image"];
     self.nameLabel.text = [data objectForKey:@"name"];
-    self.descriptionLabel.text = [data objectForKey:@"desc"];
+    self.descriptionLabel.text = [data objectForKey:@"description"];
     
-    self.communityID = [data objectForKey:@"idCommunity"];
+    self.communityID = [[data valueForKey:@"id"] stringValue];
+    //TODO
+    _following = [[data valueForKey:@"likes"] stringValue];
     
     self.imageLoadingOperation = [ApplicationDelegate.komomuEngine imageAtURL:[NSURL URLWithString:loadingImageURLString] 
                                                                  onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {

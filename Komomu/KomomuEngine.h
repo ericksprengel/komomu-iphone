@@ -19,6 +19,14 @@ typedef void (^ImagesResponseBlock)(NSDictionary* imageURLs);
 -(void) searchCommunities:(NSString*) tag onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
 
 -(void) getCommunity:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
+-(void) getUser:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
 
 -(void) getFeed:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
+-(void) session:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
+
+-(void) follow:(NSMutableDictionary*) params  onError:(MKNKErrorBlock) errorBlock;
+-(void) like:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
+
+
+
 @end

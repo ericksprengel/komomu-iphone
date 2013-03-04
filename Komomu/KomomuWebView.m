@@ -9,6 +9,8 @@
 #import "KomomuWebView.h"
 
 @implementation KomomuWebView
+@synthesize title;
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -19,13 +21,8 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void) setViewData:(NSDictionary*) data {
+    //self.title.text = [data objectForKey:@"name"];
 }
-*/
 
 @end

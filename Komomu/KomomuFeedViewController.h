@@ -21,11 +21,22 @@
 	//  Reloading var should really be your tableviews datasource
 	//  Putting it here for demo purposes 
 	BOOL _reloading;
+    BOOL animatingSideSwipe;
+    UITableViewCell* sideSwipeCell;
+    IBOutlet UIView* sideSwipeView;
+    UISwipeGestureRecognizerDirection sideSwipeDirection;
+    
+    NSArray* buttonData;
+    NSMutableArray* buttons;
 }
 @property (nonatomic, retain) NSMutableDictionary *params;
 
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (nonatomic, retain) UITableViewCell* sideSwipeCell;
+@property (nonatomic, retain) IBOutlet UIView* sideSwipeView;
+@property (nonatomic) UISwipeGestureRecognizerDirection sideSwipeDirection;
+@property (nonatomic) BOOL animatingSideSwipe;
 
 @property (strong, nonatomic) NSArray *posts;
 - (void)reloadTableViewDataSource;

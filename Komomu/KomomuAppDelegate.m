@@ -9,6 +9,7 @@
 #import "KomomuAppDelegate.h"
 #import "KomomuTabBarViewController.h"
 
+
 #define FACEBOOK_APP_ID @"268356133266355"
 
 @implementation KomomuAppDelegate
@@ -32,10 +33,11 @@
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary]; 
     [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
     
-    // Init komomuEngine
-    //  self.komomuEngine = [[KomomuEngine alloc] initWithHostName:@"192.168.0.180"customHeaderFields:nil];
-    _komomuEngine = [[KomomuEngine alloc] initWithHostName:@"komomu.com"customHeaderFields:headerFields];
-    [_komomuEngine useCache];
+    // Init komomuEngine    
+    
+     _komomuEngine = [[KomomuEngine alloc] initWithHostName:@"komomu-api.herokuapp.com"customHeaderFields:nil];
+//    _komomuEngine = [[KomomuEngine alloc] initWithHostName:@"192.168.1.107"customHeaderFields:headerFields];
+   // [_komomuEngine useCache];
     
     KomomuViewController *controller = [[KomomuViewController alloc] initWithNibName:@"KomomuViewController" bundle:nil];
     
@@ -58,9 +60,12 @@
         && [defaults objectForKey:@"FBExpirationDateKey"]) {
         facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+        NSLog(facebook.accessToken);
+        
     }
     userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
     _komomuUser = [[KomomuUser alloc] init];
+    _komomuUser.token = facebook.accessToken;
     
     _window.rootViewController = _navController;   
     

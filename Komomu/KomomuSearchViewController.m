@@ -14,7 +14,9 @@
 #import "KomomuAppDelegate.h"
 
 #import "KomomuTabBarViewController.h"
-@interface KomomuSearchViewController ()
+@interface KomomuSearchViewController() {
+    UIView *footerView;
+}
 
 @end
 
@@ -164,12 +166,100 @@
 
 - (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     // This will create a "invisible" footer
-    return 0.01f;
+//    return 0.01f;
+    if(section == [keys count]-1 || [keys count] == 0)
+        return 60.0;
+    else 
+        return 0.01f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     // To "clear" the footer view
-    return [UIView new];
+//    return [UIView new];
+    if(section == [keys count]-1 || [keys count] == 0) {
+        //allocate the view if it doesn't exist yet
+        footerView  = [[UIView alloc] init];
+        
+        //we would like to show a gloosy red button, so get the image first
+        UIImage *image = [[UIImage imageNamed:@"greenButton.png"]
+                          stretchableImageWithLeftCapWidth:8 topCapHeight:8];
+        
+        //create the button
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        
+        //the button should be as big as a table view cell
+        [button setFrame:CGRectMake(10, 3, 300, 44)];
+        
+        //set title, font size and font color
+        [button setTitle:@"Sugerir comunidade" forState:UIControlStateNormal];
+        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        //set action of the button
+        [button addTarget:self action:@selector(showEmail:)
+         forControlEvents:UIControlEventTouchUpInside];
+        
+        //add the button to the view
+        [footerView addSubview:button];
+        
+        return footerView;
+//        return [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redButton.png"]];
+    } else
+        return [UIView new];
+}
+
+- (IBAction)showEmail:(id)sender {
+    // Email Subject
+    NSString *emailTitle = @"Sugestão de comunidade";
+    // Email Content
+    NSString *messageBody = @"Gostaria de sugerir a criação da seguinte comunidade:";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"suporte@komomu.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent: {
+            NSLog(@"Mail sent");
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"E-mail enviado"
+                                      message:@"O pedido será analisado. Agradecemos pela sua sugestão."
+                                      delegate:nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil,
+                                      nil];
+            [alertView show];
+            break;
+        }
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section { 
@@ -181,15 +271,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
-    KomomuSearchCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
-    
+    KomomuSearchCell *cell = (KomomuSearchCell *)[tableView cellForRowAtIndexPath:indexPath];
+
+
+    NSLog(cell.communityID);
     KomomuComunityViewController *comunityController = [[KomomuComunityViewController alloc] initWithNibName:@"KomomuComunityViewController" bundle:[NSBundle mainBundle]];
     comunityController.title = cell.nameLabel.text;
     
-    [comunityController.params setObject:cell.communityID forKey:@"communityID"];
-    [comunityController.params setObject:@"hot" forKey:@"type"];
-    	
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:cell.communityID forKey:@"communityID"];
+    [params setObject:cell.following forKey:@"following"];
+    [params setObject:@"hot" forKey:@"type"];
+    comunityController.params = params;
     
     [self.navigationController pushViewController:comunityController animated:YES];
     self.search.text = @"";	

@@ -10,4 +10,7 @@
 
 @interface KomomuWebView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+-(void) setViewData:(NSDictionary*) data;
 @end

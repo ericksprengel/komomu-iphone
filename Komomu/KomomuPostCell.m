@@ -13,6 +13,7 @@
 
 @synthesize nameLabel = _nameLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
+@synthesize likesLabel = _likesLabel;
 
 @synthesize imageLoadingOperation = imageLoadingOperation_;
 
@@ -36,10 +37,11 @@
 -(void) setTableData:(NSDictionary*) data {
 
     
-    NSString *loadingImageURLString = [data objectForKey:@"image"];
-    self.nameLabel.text = [data objectForKey:@"name"];
-    
-    
+    self.nameLabel.text = [data objectForKey:@"title"];
+    _likesLabel.text = [[data objectForKey:@"likes"] stringValue];
+        
+    if ([data objectForKey:@"image"] != NULL && !([[data objectForKey:@"image"] isKindOfClass:[NSNull class]])) {
+        NSString *loadingImageURLString = [data objectForKey:@"image"];
     self.imageLoadingOperation = [ApplicationDelegate.komomuEngine imageAtURL:[NSURL URLWithString:loadingImageURLString] 
                                                                  onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
                                                                      
@@ -68,6 +70,7 @@
                                                                          }
                                                                      }
                                                                  }];
+     }
 }
 
 -(UITableView*)getTableView:(UIView*)theView

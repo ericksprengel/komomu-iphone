@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
+#import "MAConfirmButton.h"
+
 
 
 @interface KomomuComunityViewController : UIViewController <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource> {
 	    
-    NSMutableDictionary *params;
     
 	EGORefreshTableHeaderView *_refreshHeaderView;
 	
@@ -25,12 +26,15 @@
     UISwipeGestureRecognizerDirection sideSwipeDirection;
     NSArray* buttonData;
     NSMutableArray* buttons;
+    BOOL following;
 
 
 
 }
 @property (nonatomic, retain) NSMutableDictionary *params;
 
+@property (weak, nonatomic) IBOutlet UITableView *table2;
+@property (weak, nonatomic) IBOutlet MAConfirmButton *defaultButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic, retain) UITableViewCell* sideSwipeCell;

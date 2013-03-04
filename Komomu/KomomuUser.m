@@ -13,5 +13,7 @@
 @synthesize name;
 @synthesize profilePhotoImage;
 @synthesize userID;
-
+@synthesize fbID;
+@synthesize token;
+@synthesize mobile_token;
 @end

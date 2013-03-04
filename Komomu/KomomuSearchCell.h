@@ -13,10 +13,12 @@
 }
 
 @property (nonatomic, retain) NSString *communityID;
+@property (nonatomic, retain) NSString *following;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
 @property (nonatomic, strong) MKNetworkOperation* imageLoadingOperation;
 -(void) setTableData:(NSDictionary*) data;
+-(void) setTableData2;
 @end

@@ -9,6 +9,7 @@
 #import "KomomuComunityViewController.h"
 #import "KomomuAppDelegate.h"
 #import "KomomuPostViewController.h"
+#import "KomomuCommentViewController.h"
 
 #import "KomomuCommunityInfoCell.h"
 
@@ -34,13 +35,18 @@
 
 @implementation KomomuComunityViewController
 @synthesize table = _table;
-@synthesize params;
+@synthesize params = _params;
+@synthesize defaultButton = _defaultButton;
+@synthesize table2;
+
 @synthesize posts;
 @synthesize communityData;
 @synthesize sideSwipeCell, sideSwipeView, sideSwipeDirection, animatingSideSwipe;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
 //	self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.view.backgroundColor = [UIColor grayColor];
     self.table.backgroundColor = [UIColor clearColor];
@@ -54,33 +60,71 @@
     animatingSideSwipe = NO;
     [self setupGestureRecognizers];
     // Setup the title and image for each button within the side swipe view
+
     buttonData = [NSArray arrayWithObjects:
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Reply", @"title", @"reply.png", @"image", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Retweet", @"title", @"retweet-outline-button-item.png", @"image", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Favorite", @"title", @"star-hollow.png", @"image", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Profile", @"title", @"person.png", @"image", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Links", @"title", @"paperclip.png", @"image", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:@"Action", @"title", @"action.png", @"image", nil],
+                   [NSDictionary dictionaryWithObjectsAndKeys:@"Comment", @"title", @"comment.png", @"image", nil],
+                   [NSDictionary dictionaryWithObjectsAndKeys:@"Like", @"title", @"like.png", @"image", nil],
+                   [NSDictionary dictionaryWithObjectsAndKeys:@"Dislike", @"title", @"dislike.png", @"image", nil],
                    nil];
     buttons = [[NSMutableArray alloc] initWithCapacity:buttonData.count];
     
     self.sideSwipeView = [[UIView alloc] initWithFrame:CGRectMake(self.table.frame.origin.x, self.table.frame.origin.y, self.table.frame.size.width, self.table.rowHeight)];
     [self setupSideSwipeView];
+    
+    following = NO;
+}
+
+- (void)confirmAction:(id)sender{
+    //TODO
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:[self.communityData valueForKey:@"id"] forKey:@"id"];
+    [params setObject:[NSNumber numberWithInt:1] forKey:@"action"];
+
+    [ApplicationDelegate.komomuEngine follow:params onError:^(NSError* error) {
+        NSLog(@"%@", error);
+    }];
+    
+    [sender disableWithTitle:@"Seguindo"];
 }
 
 #pragma mark Button touch up inside action
 - (IBAction) touchUpInsideAction:(UIButton*)button
 {
     NSIndexPath* indexPath = [self.table indexPathForCell:sideSwipeCell];
-    
+    //TODO LIKE
     NSUInteger index = [buttons indexOfObject:button];
     NSDictionary* buttonInfo = [buttonData objectAtIndex:index];
-    [[	[UIAlertView alloc] initWithTitle:[NSString stringWithFormat: @"%@ on cell %d", [buttonInfo objectForKey:@"title"], indexPath.row]
-                                 message:nil
-                                delegate:nil
-                       cancelButtonTitle:nil
-                       otherButtonTitles:@"OK", nil] show];
-    
+    if([buttonInfo objectForKey:@"title"] == @"Like") {
+        NSLog(@"Like");
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setObject:[[posts objectAtIndex:(indexPath.row -1)] objectForKey:@"id"] forKey:@"id"];
+        [params setObject:[NSNumber numberWithInt:1] forKey:@"action"];
+        
+        [ApplicationDelegate.komomuEngine like:params onCompletion:^(NSDictionary* data) {
+            [self reloadTableData];
+        } onError:^(NSError* error) {
+            NSLog(@"%@", error);
+        }];
+    } else if ([buttonInfo objectForKey:@"title"] == @"Dislike") {
+        NSLog(@"Dislike");
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setObject:[[posts objectAtIndex:(indexPath.row -1)] objectForKey:@"id"] forKey:@"id"];
+        [params setObject:[NSNumber numberWithInt:-1] forKey:@"action"];
+        
+        [ApplicationDelegate.komomuEngine like:params onCompletion:^(NSDictionary* data) {
+            [self reloadTableData];
+        } onError:^(NSError* error) {
+            NSLog(@"%@", error);
+        }];
+
+    } else {
+        NSLog(@"Comment");
+        KomomuCommentViewController *comunityController = [[KomomuCommentViewController alloc] initWithNibName:@"KomomuCommentViewController" bundle:[NSBundle mainBundle]];
+
+        comunityController.post_ID = [[[posts objectAtIndex:(indexPath.row -1)] objectForKey:@"id"] stringValue];
+        [self.navigationController pushViewController:comunityController animated:YES];
+    }
     [self removeSideSwipeView:YES];
 }
 
@@ -99,6 +143,7 @@
     
     // Iterate through the button data and create a button for each entry
     CGFloat leftEdge = BUTTON_LEFT_MARGIN;
+
     for (NSDictionary* buttonInfo in buttonData)
     {
         // Create the button
@@ -187,7 +232,7 @@
     leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.table addGestureRecognizer:leftSwipeGestureRecognizer];
 }
-
+	
 // Called when a left swipe occurred
 - (void)swipeLeft:(UISwipeGestureRecognizer *)recognizer
 {
@@ -210,6 +255,7 @@
         NSIndexPath* indexPath = [self.table indexPathForRowAtPoint:location];
         UITableViewCell* cell = [self.table cellForRowAtIndexPath:indexPath];
         
+        
         // If we are already showing the swipe view, remove it
         if (cell.frame.origin.x != 0)
         {
@@ -222,7 +268,7 @@
         
         // If this isn't the cell that already has thew side swipe view and we aren't in the middle of animating
         // then start animating in the the side swipe view
-        if (cell!= sideSwipeCell && !animatingSideSwipe)
+        if (cell!= sideSwipeCell && !animatingSideSwipe && indexPath.row != 0)
             [self addSwipeViewTo:cell direction:direction];
     }
 }
@@ -443,10 +489,10 @@ NSInteger static compareViewsByOrigin(id sp1, id sp2, void *context)
 {
     switch (segmentedControl.selectedSegmentIndex) {
         case 0:
-            [params setObject:@"hot" forKey:@"type"];
+            [_params setObject:@"hot" forKey:@"type"];
             break;
         case 1:
-            [params setObject:@"news" forKey:@"type"];
+            [_params setObject:@"news" forKey:@"type"];
             break;
         default:
             break;
@@ -485,9 +531,15 @@ NSInteger static compareViewsByOrigin(id sp1, id sp2, void *context)
 
 
 - (void) reloadTableData {
-    [ApplicationDelegate.komomuEngine getCommunity:params onCompletion:^(NSDictionary* data) {
+    [ApplicationDelegate.komomuEngine getCommunity:_params onCompletion:^(NSDictionary* data) {
         self.posts = [data objectForKey:@"posts"];
         self.communityData = data;
+        //TODO  user_liked
+        if([[data objectForKey:@"user_liked"] intValue] >= 1) {
+            following = YES;
+        } else {
+            following = NO;
+        }
         [self.table reloadData];
         //  update the last update date
         [_refreshHeaderView refreshLastUpdatedDate];
@@ -526,6 +578,14 @@ NSInteger static compareViewsByOrigin(id sp1, id sp2, void *context)
             communityCell = [nib objectAtIndex:0];
         }
         // Configure the cell.
+        _defaultButton = [MAConfirmButton buttonWithTitle:@"Seguir" confirm:@"Confirmar?"];
+        [_defaultButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_defaultButton setAnchor:CGPointMake(310, 65)];
+        //    [defaultButton setSelected:TRUE];
+        [communityCell.contentView addSubview:_defaultButton];
+        if(following) {
+            [_defaultButton disableWithTitle:@"Seguindo"];
+        }
         [communityCell setTableData:self.communityData];
         cell = communityCell;
     } else {
@@ -639,6 +699,7 @@ NSInteger static compareViewsByOrigin(id sp1, id sp2, void *context)
 }
 
 - (void)viewDidUnload {
+    [self setTable2:nil];
     [self setTable:nil];
 	_refreshHeaderView=nil;
 }

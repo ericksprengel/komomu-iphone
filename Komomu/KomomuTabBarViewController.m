@@ -62,7 +62,7 @@
    // UIViewController *searchViewController = [self viewControllerWithNibName:@"KomomuSearch1ViewController" image:[UIImage imageNamed:@"news.png"]];
     UIViewController *searchViewController = _firstTab;
     searchViewController.title = @"Search";
-    searchViewController.tabBarItem.image = [UIImage imageNamed:@"112-group.png"];
+    searchViewController.tabBarItem.image = [UIImage imageNamed:@"search.png"];
     
     UIViewController *profileViewController = [self viewControllerWithNibName:@"KomomuProfileViewController" image:[UIImage imageNamed:@"123-id-card.png"]];
     profileViewController.title = @"User";

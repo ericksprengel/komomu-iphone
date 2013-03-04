@@ -22,6 +22,7 @@
 @synthesize keys;
 
 @synthesize nameLabel;
+@synthesize scoreLabel;
 @synthesize profileImageView;
 @synthesize table;
 
@@ -39,24 +40,37 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    KomomuAppDelegate *delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self reloadData];
 
+}
+
+- (void) reloadData {
+    KomomuAppDelegate *delegate = (KomomuAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     [self.profileImageView setImage:[[delegate komomuUser] profilePhotoImage]];
     [self.nameLabel setText:[[delegate komomuUser] name]];
     
     [ApplicationDelegate.komomuEngine searchCommunities:@"Brazil" onCompletion:^(NSDictionary* commu) {
-        self.userCommunities = [commu mutableDeepCopy];
+        self.userCommunities = [commu mutableSingleCopy];
         
         NSArray *abcArray = [[self.userCommunities allKeys] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
-        
+        		
         self.keys = [abcArray mutableCopy];
         
         [table reloadData];        
     }
                                                 onError:^(NSError* error) {
                                                 }];
-
+    
+    NSMutableDictionary *p = [[NSMutableDictionary alloc] init];
+    [p setObject:[[delegate komomuUser] userID] forKey:@"userID"];
+    
+    [ApplicationDelegate.komomuEngine getUser:p onCompletion:^(NSDictionary* commu) {
+        [self.scoreLabel setText:[[[commu valueForKey:@"points"] stringValue] stringByAppendingString: @" ponto(s)"]];   
+    }
+                                      onError:^(NSError* error) {
+                                      }];
+     
 
 }
 
@@ -64,6 +78,7 @@
     [super viewDidAppear:animated];  
     // Add navigation bar Title
     self.tabBarController.navigationItem.title = @"Profile";
+    [self reloadData];
 
 }
 
@@ -119,9 +134,37 @@
     return [UIView new];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        NSUInteger section = [indexPath section]; 
+        
+        NSString *key = [keys objectAtIndex:section]; 
+        [self.keys removeObjectAtIndex:section];
+        NSArray *nameSection = [self.userCommunities objectForKey:key];
+        
+        //TODO unfollow
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setObject:[[nameSection objectAtIndex:indexPath.row] objectForKey:@"id"] forKey:@"id"];
+        [params setObject:[NSNumber numberWithInt:0] forKey:@"action"];        
+        [ApplicationDelegate.komomuEngine follow:params onError:^(NSError* error) {
+            NSLog(@"%@", error);
+        }];
+        [self reloadData];        
+    }    
+}
+
+
 - (void)viewDidUnload
 {
     [self setNameLabel:nil];
+    [self setScoreLabel:nil];
     [self setProfileImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -145,4 +188,6 @@
     [delegate.navController popToRootViewControllerAnimated:YES];
 
 }
+
+
 @end

@@ -10,8 +10,11 @@
 
 @interface KomomuUser : NSObject
 
+@property (nonatomic, retain) NSString *token;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) UIImage *profilePhotoImage;
 @property (nonatomic, retain) NSString *userID;
+@property (nonatomic, retain) NSString *fbID;
+@property (nonatomic, retain) NSString *mobile_token;
 
 @end

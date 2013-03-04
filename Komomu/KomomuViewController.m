@@ -11,6 +11,8 @@
 #import "KomomuAppDelegate.h"
 
 #import "KomomuTabBarViewController.h"
+#import "KomomuEngineAux.h"
+
 
 @interface KomomuViewController ()
 
@@ -346,10 +348,26 @@
         [image drawInRect:clipRect];
         UIImage *imgThumb = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        
+        if(![delegate komomuUser].name) {
         [[delegate komomuUser] setProfilePhotoImage:imgThumb];
         [[delegate komomuUser] setName:userName];
-        [[delegate komomuUser] setUserID:[result objectForKey:@"uid"]];
+        [[delegate komomuUser] setFbID:[[result objectForKey:@"uid"] stringValue]];
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setObject:[delegate komomuUser].fbID forKey:@"fb_uid"];
+        [params setObject:[delegate komomuUser].token forKey:@"fb_token"];
+        
+        
+        [ApplicationDelegate.komomuEngine session:params onCompletion:^(NSDictionary* data) {
+            [[delegate komomuUser] setMobile_token:[data valueForKey:@"mobile_token"]];
+            [[delegate komomuUser] setUserID:[[data valueForKey:@"id"]stringValue]];
+
+
+        }onError:^(NSError* error) {
+            NSLog(@"%@", error);
+        }];
+        
+        }
         
         [self apiGraphUserPermissions];
     } else {

@@ -8,6 +8,8 @@
 
 #import "KomomuPostViewController.h"
 #import "KomomuContentView.h"
+#import "KomomuWebView.h"
+
 
 #import "KomomuAppDelegate.h"
 
@@ -63,14 +65,13 @@
 
 - (UIView *)viewForPageInPagingView:(ATPagingView *)pagingView atIndex:(NSInteger)index {
     KomomuContentView *view = [pagingView dequeueReusablePage];
-    
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KomomuContentView" owner:self options:nil];
+     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KomomuContentView" owner:self options:nil];
+
     view = [nib objectAtIndex:0];
     
   [view setViewData:[self.posts objectAtIndex:index]];
     
     return view;
-    
 
 }
 

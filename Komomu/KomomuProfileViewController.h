@@ -10,6 +10,7 @@
 
 @interface KomomuProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @property (nonatomic, retain) NSMutableDictionary *params;

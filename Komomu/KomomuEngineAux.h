@@ -10,4 +10,7 @@
 
 @interface KomomuEngineAux : MKNetworkEngine
 
+//typedef void (^ImagesResponseBlock)(NSDictionary* imageURLs);
+//-(void) session:(NSMutableDictionary*) params onCompletion:(ImagesResponseBlock) imageURLBlock onError:(MKNKErrorBlock) errorBlock;
+
 @end

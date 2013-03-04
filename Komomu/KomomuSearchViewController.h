@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "OverlayViewController.h"
+#import <MessageUI/MessageUI.h> 
 
-@interface KomomuSearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface KomomuSearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate> {
     NSString *strData;
     
     BOOL searching;
@@ -26,6 +27,8 @@
 - (void)resetSearch;
 - (void)handleSearchForTerm:(NSString *)searchTerm;
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
+
+- (IBAction)showEmail:(id)sender;
 
 @property (nonatomic, retain) NSString *strData;
 
