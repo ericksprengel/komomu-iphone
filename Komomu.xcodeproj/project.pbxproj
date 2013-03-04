@@ -29,8 +29,6 @@
 		BA2363BE16BF09D40069CF41 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363BC16BF09CC0069CF41 /* search.png */; };
 		BA2363BF16BF09D40069CF41 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363BD16BF09D00069CF41 /* search@2x.png */; };
 		BA2363C116BF0CF80069CF41 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C016BF0CF60069CF41 /* icon.png */; };
-		BA2363C416BF0ED60069CF41 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C216BF0ECE0069CF41 /* Default.png */; };
-		BA2363C516BF0ED60069CF41 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2363C316BF0ED20069CF41 /* Default@2x.png */; };
 		BA301B691634426A002B0B55 /* KomomuFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA301B6716344269002B0B55 /* KomomuFeedViewController.m */; };
 		BA301B6A1634426A002B0B55 /* KomomuFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA301B681634426A002B0B55 /* KomomuFeedViewController.xib */; };
 		BA301B6E16347B1E002B0B55 /* UIImageViewBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA301B6D16347B1D002B0B55 /* UIImageViewBorder.m */; };
@@ -41,6 +39,8 @@
 		BA31B18E16BF3C32006E1792 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA31B18D16BF3C32006E1792 /* MessageUI.framework */; };
 		BA31B19316BF61DE006E1792 /* KomomuCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA31B19116BF61DE006E1792 /* KomomuCommentViewController.m */; };
 		BA31B19416BF61DE006E1792 /* KomomuCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA31B19216BF61DE006E1792 /* KomomuCommentViewController.xib */; };
+		BA49898216E4E789008B27B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BA49898016E4E789008B27B5 /* Default.png */; };
+		BA49898316E4E789008B27B5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA49898116E4E789008B27B5 /* Default@2x.png */; };
 		BA57CCA7166E79CF00EF1126 /* KomomuContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57CCA6166E79CF00EF1126 /* KomomuContentView.xib */; };
 		BA5A348416721EC2005F7FE5 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5A348316721EBE005F7FE5 /* like.png */; };
 		BA5A3487167223C9005F7FE5 /* dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5A3486167223C6005F7FE5 /* dislike.png */; };
@@ -168,8 +168,6 @@
 		BA2363BC16BF09CC0069CF41 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		BA2363BD16BF09D00069CF41 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		BA2363C016BF0CF60069CF41 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BA2363C216BF0ECE0069CF41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../Downloads/Default.png; sourceTree = "<group>"; };
-		BA2363C316BF0ED20069CF41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../Downloads/Default@2x.png"; sourceTree = "<group>"; };
 		BA301B6616344269002B0B55 /* KomomuFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuFeedViewController.h; sourceTree = "<group>"; };
 		BA301B6716344269002B0B55 /* KomomuFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuFeedViewController.m; sourceTree = "<group>"; };
 		BA301B681634426A002B0B55 /* KomomuFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuFeedViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +181,8 @@
 		BA31B19016BF61DD006E1792 /* KomomuCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KomomuCommentViewController.h; sourceTree = "<group>"; };
 		BA31B19116BF61DE006E1792 /* KomomuCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KomomuCommentViewController.m; sourceTree = "<group>"; };
 		BA31B19216BF61DE006E1792 /* KomomuCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuCommentViewController.xib; sourceTree = "<group>"; };
+		BA49898016E4E789008B27B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BA49898116E4E789008B27B5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BA57CCA6166E79CF00EF1126 /* KomomuContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KomomuContentView.xib; sourceTree = "<group>"; };
 		BA5A348316721EBE005F7FE5 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		BA5A3486167223C6005F7FE5 /* dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dislike.png; sourceTree = "<group>"; };
@@ -571,6 +571,8 @@
 				BAA1985C15B09DA400F70732 /* cameraTabBarItem.png */,
 				BAA1985D15B09DA400F70732 /* cameraTabBarItem@2x.png */,
 				BAF1BB0C1598B4E000414803 /* star.jpeg */,
+				BA49898016E4E789008B27B5 /* Default.png */,
+				BA49898116E4E789008B27B5 /* Default@2x.png */,
 				BADB659B15A5DEEF002F9BB4 /* blackArrow.png */,
 				BADB659C15A5DEEF002F9BB4 /* blackArrow@2x.png */,
 				BADB659D15A5DEEF002F9BB4 /* blueArrow.png */,
@@ -583,8 +585,6 @@
 				BAA5F0FA15A229D500C3322D /* iphone.jpeg */,
 				BAA0EB6715939C8600478315 /* blackbutton.png */,
 				BA70A8A815B5DD4000A6B381 /* LoginWithFacebookNormal.png */,
-				BA2363C216BF0ECE0069CF41 /* Default.png */,
-				BA2363C316BF0ED20069CF41 /* Default@2x.png */,
 				BA70A8AC15B5DD7000A6B381 /* LoginWithFacebookNormal@2x.png */,
 				BA70A8AA15B5DD5900A6B381 /* LoginWithFacebookPressed.png */,
 				BA70A8AE15B5DD7500A6B381 /* LoginWithFacebookPressed@2x.png */,
@@ -794,9 +794,9 @@
 				BA2363BE16BF09D40069CF41 /* search.png in Resources */,
 				BA2363BF16BF09D40069CF41 /* search@2x.png in Resources */,
 				BA2363C116BF0CF80069CF41 /* icon.png in Resources */,
-				BA2363C416BF0ED60069CF41 /* Default.png in Resources */,
-				BA2363C516BF0ED60069CF41 /* Default@2x.png in Resources */,
 				BA31B19416BF61DE006E1792 /* KomomuCommentViewController.xib in Resources */,
+				BA49898216E4E789008B27B5 /* Default.png in Resources */,
+				BA49898316E4E789008B27B5 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
